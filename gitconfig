@@ -1,0 +1,24 @@
+[user]
+	name = Ethan Bruning
+	email = ethan@modsterinc.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	pu = pull
+[merge]
+	tool = opendiff
+	summary = true
+[core]
+	excludesfile = /Users/ebruning/.gitignore
+	autocrlf = input
+	editor = mate -w
+[gui]
+	recentrepo = /Users/ebruning/Development/Projects/git
+
