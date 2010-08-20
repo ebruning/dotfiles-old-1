@@ -41,7 +41,7 @@ function update_movies {
 	sh MovieJukebox.sh movies.xml -o /Volumes/Videos 
 }
 
-function update_porn {
+function update_p {
 	cd ~/moviejukebox
-	sh MovieJukebox.sh porn.xml -o /Volumes/Porn
+	sh MovieJukebox.sh p.xml -o /Volumes/P
 }
