@@ -5,7 +5,7 @@ syntax enable
 
 set background=dark
 set novisualbell
-"colorscheme ir_black
+colorscheme ir_black
 
 set number
 set numberwidth=4
