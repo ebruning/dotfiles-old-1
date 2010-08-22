@@ -17,9 +17,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 export PS1='\u@\w $(__git_ps1)$ '
 
-## Enable colors
-export LSCOLORS=hxfxcxdxbxegedabagHxHx
-
 alias ls="ls -G"
 alias ll="ls -l -h"
 alias la="ls -a"
