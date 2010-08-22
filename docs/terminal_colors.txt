@@ -1,0 +1,2 @@
+http://blog.infinitered.com/entries/show/6
+http://blog.fallingsnow.net/2009/08/28/fixing-colors-in-terminal-app-on-10-6/
