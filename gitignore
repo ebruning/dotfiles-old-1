@@ -35,3 +35,6 @@ _ReSharper*/
 .gitignore
 UpgradeLog.XML
 _UpgradeReport_Files/
+
+## Jekyll
+_site
