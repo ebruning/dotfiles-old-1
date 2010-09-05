@@ -153,31 +153,27 @@ prompt_color() {
 
 if [ "$UNAME" = Darwin ]; then
     # put ports on the paths if /opt/local exists
-    test -x /opt/local -a ! -L /opt/local && {
-        PORTS=/opt/local
+    #test -x /opt/local -a ! -L /opt/local && {
+    #    PORTS=/opt/local
 
         # setup the PATH and MANPATH
-        PATH="$PORTS/bin:$PORTS/sbin:$PATH"
-        MANPATH="$PORTS/share/man:$MANPATH"
+    #    PATH="$PORTS/bin:$PORTS/sbin:$PATH"
+    #    MANPATH="$PORTS/share/man:$MANPATH"
 
         # nice little port alias
-        alias port="sudo nice -n +18 $PORTS/bin/port"
-    }
+    #    alias port="sudo nice -n +18 $PORTS/bin/port"
+    #}
 
-    test -x /usr/pkg -a ! -L /usr/pkg && {
-        PATH="/usr/pkg/sbin:/usr/pkg/bin:$PATH"
-        MANPATH="/usr/pkg/share/man:$MANPATH"
-    }
+    #test -x /usr/pkg -a ! -L /usr/pkg && {
+    #    PATH="/usr/pkg/sbin:/usr/pkg/bin:$PATH"
+    #    MANPATH="/usr/pkg/share/man:$MANPATH"
+    #}
 
     # setup java environment. puke.
     JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     ANT_HOME="/Developer/Java/Ant"
     export ANT_HOME JAVA_HOME
 
-    # hold jruby's hand
-    test -d /opt/jruby &&
-    JRUBY_HOME="/opt/jruby"
-    export JRUBY_HOME
 fi
 
 # ----------------------------------------------------------------------
@@ -190,7 +186,6 @@ alias la="ls -a"
 alias lla="ls -a -l"
 alias hub=git
 alias status="git status"
-
 
 # ----------------------------------------------------------------------
 # BASH COMPLETION
