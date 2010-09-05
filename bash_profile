@@ -324,10 +324,6 @@ test -r ~/.shenv &&
 PATH=$(puniq $PATH)
 MANPATH=$(puniq $MANPATH)
 
-# Force loading of bashc git completion 
-# TODO: Need to figure out why this isn't autoloading
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
 prompt_color
