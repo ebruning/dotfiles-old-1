@@ -83,11 +83,16 @@ HISTCONTROL=ignoreboth
 HAVE_VIM=$(command -v vim)
 HAVE_GVIM=$(command -v gvim)
 
-# EDITOR
-# Set this to TextMate
-# TODO: Handle if TextMate is not installed
-export EDITOR='mate'
-export GIT_EDITOR='mate -wl1'
+# Sets the default editor
+
+if [ -f /Applications/TextMate.app/Contents/Resources/mate ]
+then
+	export EDITOR='mate'
+	export GIT_EDITOR='mate -wl1'
+else
+	export EDITOR='vi'
+	export GIT_EDITOR='vi'
+fi
 
 # PAGER
 if test -n "$(command -v less)" ; then
