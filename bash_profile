@@ -219,24 +219,6 @@ _expand() {
     return 0
 }
 
-# ----------------------------------------------------------------------
-# LS AND DIRCOLORS
-# ----------------------------------------------------------------------
-
-# we always pass these to ls(1)
-LS_COMMON="-hBG"
-
-# if the dircolors utility is available, set that up to
-dircolors="$(type -P gdircolors dircolors | head -1)"
-test -n "$dircolors" && {
-    COLORS=/etc/DIR_COLORS
-    test -e "/etc/DIR_COLORS.$TERM"   && COLORS="/etc/DIR_COLORS.$TERM"
-    test -e "$HOME/.dircolors"        && COLORS="$HOME/.dircolors"
-    test ! -e "$COLORS"               && COLORS=
-    eval `$dircolors --sh $COLORS`
-}
-unset dircolors
-
 # --------------------------------------------------------------------
 # MISC COMMANDS
 # --------------------------------------------------------------------
@@ -312,13 +294,6 @@ man () {
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
-
-# bring in rbdev functions
-. rbdev 2>/dev/null || true
-
-# source ~/.shenv now if it exists
-test -r ~/.shenv &&
-. ~/.shenv
 
 # condense PATH entries
 PATH=$(puniq $PATH)
