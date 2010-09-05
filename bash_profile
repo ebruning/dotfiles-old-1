@@ -142,7 +142,6 @@ prompt_compact() {
 }
 
 prompt_color() {
-    #PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREY}]${COLOR2}$P${PS_CLEAR} "
     PS1="${GREY}[${COLOR1}\u${GREY}@${PURPLE}\h${GREY}:${COLOR1}\W${PURPLE}\$(__git_ps1)${GREY}]${COLOR2}$P${PS_CLEAR} "
 	PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
