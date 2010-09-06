@@ -84,7 +84,6 @@ HAVE_VIM=$(command -v vim)
 HAVE_GVIM=$(command -v gvim)
 
 # Sets the default editor
-
 if [ -f /Applications/TextMate.app/Contents/Resources/mate ]
 then
 	export EDITOR='mate'
@@ -293,6 +292,10 @@ man () {
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
+
+# Force loading of bashc git completion 
+# TODO: Need to figure out why this isn't autoloading
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # condense PATH entries
 PATH=$(puniq $PATH)
