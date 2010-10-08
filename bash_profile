@@ -166,12 +166,16 @@ fi
 # ALIASES / FUNCTIONS
 # ----------------------------------------------------------------------
 
+# Directory aliases
 alias ls="ls -G"
 alias ll="ls -l -h"
 alias la="ls -a"
 alias lla="ls -a -l"
+
+# Git aliases
 alias hub=git
 alias status="git status"
+
 alias top=htop
 alias listen="sudo lsof -i -P |grep -i \"listen\""
 
