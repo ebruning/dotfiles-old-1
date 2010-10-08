@@ -197,6 +197,12 @@ alias listen="sudo lsof -i -P |grep -i \"listen\""
 # BASH COMPLETION
 # ----------------------------------------------------------------------
 
+# Force loading of bashc git completion 
+# TODO: Need to figure out why this isn't autoloading
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+source /usr/local/etc/bash_completion.d/source-highlight-bash-completion
+
 #test -z "$BASH_COMPLETION" && {
 #    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
 #    test -n "$PS1" && test $bmajor -gt 1 && {
@@ -304,12 +310,6 @@ man () {
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
-
-# Force loading of bashc git completion 
-# TODO: Need to figure out why this isn't autoloading
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-flow-completion.bash
-source /usr/local/etc/bash_completion.d/source-highlight-bash-completion
 
 # condense PATH entries
 PATH=$(puniq $PATH)
