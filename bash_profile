@@ -197,23 +197,23 @@ alias listen="sudo lsof -i -P |grep -i \"listen\""
 # BASH COMPLETION
 # ----------------------------------------------------------------------
 
-test -z "$BASH_COMPLETION" && {
-    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
-    test -n "$PS1" && test $bmajor -gt 1 && {
+#test -z "$BASH_COMPLETION" && {
+#    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
+#    test -n "$PS1" && test $bmajor -gt 1 && {
         # search for a bash_completion file to source
-        for f in /usr/local/etc/bash_completion \
-                 /usr/pkg/etc/bash_completion \
-                 /opt/local/etc/bash_completion \
-                 /etc/bash_completion
-        do
-            test -f $f && {
-                . $f
-                break
-            }
-        done
-    }
-    unset bash bmajor bminor
-}
+#        for f in /usr/local/etc/bash_completion \
+#                 /usr/pkg/etc/bash_completion \
+#                 /opt/local/etc/bash_completion \
+#                 /etc/bash_completion
+#        do
+#            test -f $f && {
+#                . $f
+#                break
+#            }
+#        done
+#    }
+#    unset bash bmajor bminor
+#}
 
 # override and disable tilde expansion
 _expand() {
@@ -308,6 +308,8 @@ man () {
 # Force loading of bashc git completion 
 # TODO: Need to figure out why this isn't autoloading
 source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+source /usr/local/etc/bash_completion.d/source-highlight-bash-completion
 
 # condense PATH entries
 PATH=$(puniq $PATH)
