@@ -146,7 +146,6 @@ prompt_compact() {
 }
 
 prompt_color() {
-    #PS1="${GREY}[${COLOR1}\u${GREY}@${PURPLE}\h${GREY}:${COLOR1}\W${PURPLE}\$(__git_ps1)${GREY}]${COLOR2}$P${PS_CLEAR} "
     PS1="${GREY}[${COLOR1}\u${GREY}:${PURPLE}\W${COLOR1}\$(__git_ps1)${GREY}]${COLOR2}$P${PS_CLEAR} "
 	PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
@@ -156,23 +155,6 @@ prompt_color() {
 # ----------------------------------------------------------------------
 
 if [ "$UNAME" = Darwin ]; then
-    # put ports on the paths if /opt/local exists
-    #test -x /opt/local -a ! -L /opt/local && {
-    #    PORTS=/opt/local
-
-        # setup the PATH and MANPATH
-    #    PATH="$PORTS/bin:$PORTS/sbin:$PATH"
-    #    MANPATH="$PORTS/share/man:$MANPATH"
-
-        # nice little port alias
-    #    alias port="sudo nice -n +18 $PORTS/bin/port"
-    #}
-
-    #test -x /usr/pkg -a ! -L /usr/pkg && {
-    #    PATH="/usr/pkg/sbin:/usr/pkg/bin:$PATH"
-    #    MANPATH="/usr/pkg/share/man:$MANPATH"
-    #}
-
     # setup java environment. puke.
     JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     ANT_HOME="/Developer/Java/Ant"
@@ -197,29 +179,11 @@ alias listen="sudo lsof -i -P |grep -i \"listen\""
 # BASH COMPLETION
 # ----------------------------------------------------------------------
 
-# Force loading of bashc git completion 
-# TODO: Need to figure out why this isn't autoloading
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-flow-completion.bash
-source /usr/local/etc/bash_completion.d/source-highlight-bash-completion
-
-#test -z "$BASH_COMPLETION" && {
-#    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
-#    test -n "$PS1" && test $bmajor -gt 1 && {
-        # search for a bash_completion file to source
-#        for f in /usr/local/etc/bash_completion \
-#                 /usr/pkg/etc/bash_completion \
-#                 /opt/local/etc/bash_completion \
-#                 /etc/bash_completion
-#        do
-#            test -f $f && {
-#                . $f
-#                break
-#            }
-#        done
-#    }
-#    unset bash bmajor bminor
-#}
+for file in /usr/local/etc/bash_completion.d/*
+	do {
+		source $file
+	}
+done
 
 # override and disable tilde expansion
 _expand() {
