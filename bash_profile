@@ -159,7 +159,6 @@ if [ "$UNAME" = Darwin ]; then
     JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
     ANT_HOME="/Developer/Java/Ant"
     export ANT_HOME JAVA_HOME
-
 fi
 
 # ----------------------------------------------------------------------
