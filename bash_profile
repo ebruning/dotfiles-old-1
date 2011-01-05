@@ -44,6 +44,9 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # out of order, should change this to myPath:SysPath
 export PATH=/Users/ebruning/bin:/Users/ebruning/bin/depot_tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin
 
+# Added for RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
