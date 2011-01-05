@@ -119,7 +119,7 @@ SCREEN_ESC="\[\033k\033\134\]"
 
 prompt_color() {
     #PS1="${GREY}[${COLOR1}\u${GREY}:${PURPLE}\w${COLOR1}\$(__git_ps1)${GREY}]${COLOR2}$P${PS_CLEAR} "
-	PS1="[\w\$(__git_ps1)]$P${PS_CLEAR} "
+	PS1="\w\$(__git_ps1)$P${PS_CLEAR}: "
 	PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
