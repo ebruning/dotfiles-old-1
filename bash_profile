@@ -7,7 +7,6 @@
 
 # the basics
 : ${HOME=~}
-: ${LOGNAME=$(id -un)}
 : ${UNAME=$(uname)}
 
 # complete hostnames from this file
