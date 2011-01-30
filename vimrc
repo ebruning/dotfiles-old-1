@@ -62,7 +62,7 @@ endif
 
 if &t_Co > 2 || has("gui_running")
 	"switch syntax highlighting on, when the terminal has colors
-	colorscheme zenburn
+	colorscheme mustang "zenburn
 	syntax on
 endif
 
@@ -90,6 +90,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 "Allows you to sudo when already editing a file, use w!!
 cmap w!! w !sudo tee % >/dev/null
 
-set gfn=Monaco:h14
+set gfn=Monaco:h12
 set shell=/bin/bash
 
