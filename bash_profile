@@ -168,6 +168,8 @@ _expand() {
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
 
+export NODE_PATH=/usr/local/lib/node
+
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
 prompt_color
