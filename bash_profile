@@ -12,6 +12,8 @@
 # complete hostnames from this file
 : ${HOSTFILE=~/.ssh/known_hosts}
 
+export TERM=xterm-256color
+
 # ----------------------------------------------------------------------
 #  SHELL OPTIONS
 # ----------------------------------------------------------------------
