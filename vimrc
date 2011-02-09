@@ -58,9 +58,8 @@ set background=dark
 
 if &t_Co >= 256 || has("gui_running")
 	colorscheme mustang
-endif
-
-if &t_Co > 2 || has("gui_running")
+	syntax on
+elseif &t_Co > 2 || has("gui_running")
 	"switch syntax highlighting on, when the terminal has colors
 	colorscheme mustang "zenburn
 	syntax on
