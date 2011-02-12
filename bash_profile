@@ -43,7 +43,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 # set PATH variable, didn't load PATH from system as paths were getting
 # out of order, should change this to myPath:SysPath
-export PATH=/Users/ebruning/bin:/Users/ebruning/bin/depot_tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin
+export PATH=/Users/ebruning/bin:/Users/ebruning/bin/depot_tools:/usr/local/Cellar/python/2.7.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/X11/bin
 
 # Added for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -165,6 +165,8 @@ done
 _expand() {
     return 0
 }
+
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
