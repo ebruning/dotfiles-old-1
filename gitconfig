@@ -28,3 +28,5 @@
 [gui]
     recentrepo = /Users/ebruning/Development/Projects/git
 
+[rebase]
+	autosquash = true
