@@ -1,4 +1,7 @@
 "Used http://nvie.com/posts/how-i-boosted-my-vim/ to create vimrc
+" Set colors to 256
+" Added when syntax highlighting was lost
+set t_Co=256
 
 set nocompatible
 set noexrc
@@ -14,6 +17,9 @@ let mapleader=","
 "Edit and reload the vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Used for Gundo.vim
+nnoremap <F5> :GundoToggle<CR>
 
 "Open a new file without having to write the current buffer
 set hidden
@@ -57,10 +63,12 @@ endif
 set background=dark
 
 if &t_Co >= 256 || has("gui_running")
+	"echo "256"
 	colorscheme mustang
 	syntax on
 elseif &t_Co > 2 || has("gui_running")
 	"switch syntax highlighting on, when the terminal has colors
+	"echo "2"
 	colorscheme mustang "zenburn
 	syntax on
 endif
