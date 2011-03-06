@@ -92,7 +92,7 @@ set mouse=a "Enable the mouse
 nnoremap ; : 
 
 "Clears highlighed searches
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> ./ :nohlsearch<CR>
 
 "Allows you to sudo when already editing a file, use w!!
 cmap w!! w !sudo tee % >/dev/null
