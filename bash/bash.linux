@@ -1,0 +1,10 @@
+# bash completion
+for file in /home/ebruning/bin/completion/*
+	do {
+		source $file
+	}
+done
+
+# set default editor
+export EDITOR='vi'
+export GIT_EDITOR='vi'
