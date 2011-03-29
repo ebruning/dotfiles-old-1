@@ -84,8 +84,8 @@ if [ $OSTYPE = "darwin10.0" ]; then
 	source ~/.bash/bash.mac
 elif [ $OSTYPE = "linux-gnu" ]; then
 	source ~/.bash/bash.linux
-elif [ $OSTYPE = "blah2" ]; then
-	echo "cygwin"
+elif [ $OSTYPE = "msys" ]; then
+	source ~/.bash/bash.cygwin
 else
 	echo "unknown"
 fi
