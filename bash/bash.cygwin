@@ -1,2 +1,5 @@
 export PATH="/c/Users/ebruning/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/Ruby187/bin:/c/Program Files/Common Files/Microsoft Shared/Windows Live:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Program Files/ThinkPad/Bluetooth Software/:/c/Program Files/ThinkPad/Bluetooth Software/syswow64:/c/Program Files/Intel/WiFi/bin/:/c/Program Files/Common Files/Intel/WirelessCommon/:/c/Program Files (x86)/Lenovo/Access Connections/:/c/Program Files (x86)/Mercurial/:/c/Program Files/TortoiseSVN/bin:/c/Program Files (x86)/IBM/RationalSDLC/common:/c/Program Files (x86)/Kofax/Imgctls/bin:/c/Program Files (x86)/IronRuby 1.1/bin:/cmd:/c/Program Files (x86)/QuickTime/QTSystem/:/c/Program Files (x86)/VisualSVN/bin:/c/Program Files/Common Files/Microsoft Shared/WindowsLive:/c/Python27/:/c/Program Files (x86)/Vim/vim73:/c/Users/ebruning/bin:/c/scala/bin"
 
+export EDITOR='vi'
+export GIT_EDITOR='vi'
+
