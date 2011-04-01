@@ -5,10 +5,6 @@
 # and
 # http://github.com/adamv/dotfiles
 
-export TERM=xterm-256color
-
-#  SHELL OPTIONS
-
 set -o notify
 ulimit -S -c 0
 umask 0022
@@ -20,8 +16,6 @@ test -r /etc/bashrc &&
 
 # git prompt
 GIT_PS1_SHOWDIRTYSTATE=true
-
-# ENVIRONMENT CONFIGURATION
 
 # detect interactive shell
 case "$-" in
@@ -87,5 +81,5 @@ elif [ $OSTYPE = "linux-gnu" ]; then
 elif [ $OSTYPE = "msys" ]; then
 	source ~/.bash/bash.cygwin
 else
-	echo "unknown"
+	echo "unknown system type"
 fi
