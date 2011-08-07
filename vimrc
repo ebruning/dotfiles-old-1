@@ -74,9 +74,8 @@ elseif &t_Co > 2 || has("gui_running")
 endif
 
 "Shows tabs and spaces >...
-"TODO: May keep this
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 autocmd filetype html,xml set listchars-=tab:>. "Disable visible tabs for HTML,XML
 
@@ -97,6 +96,6 @@ nmap <silent> ./ :nohlsearch<CR>
 "Allows you to sudo when already editing a file, use w!!
 cmap w!! w !sudo tee % >/dev/null
 
-set gfn=Monaco:h12
+set gfn=Monaco:h14
 set shell=/bin/bash
-
+set lines=50 columns=90
