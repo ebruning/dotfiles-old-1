@@ -74,7 +74,7 @@ prompt_color
 
 # Call OS Specific bash commands
 
-if [ $OSTYPE = "darwin10.0" ]; then
+if [ $OSTYPE = "darwin11" ]; then
 	source ~/.bash/bash.mac
 elif [ $OSTYPE = "linux-gnu" ]; then
 	source ~/.bash/bash.linux
@@ -92,3 +92,4 @@ local cur=${COMP_WORDS[COMP_CWORD]};
 COMPREPLY=($(compgen -W '${hosts[@]}' -- $cur ))
 }
 complete -F autoCompleteHostname ssh
+complete -F autoCompleteHostname scp
