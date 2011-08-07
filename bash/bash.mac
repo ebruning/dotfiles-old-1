@@ -16,12 +16,13 @@ source "$HOME/.rvm/scripts/rvm"
 alias vnc="vncviewer ebruning-lnx 2>/dev/null &"
 alias hub=git
 alias top=htop
+alias vi="mvim -v"
 
 # Added for node
 export NODE_PATH=/usr/local/lib/node
 
 # bash completion
-for file in /usr/local/etc/bash_completion.d/*
+for file in /Users/ebruning/bin/completion/* #/usr/local/etc/bash_completion.d/*
 	do {
 		source $file
 	}
@@ -30,7 +31,7 @@ done
 source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 
 # Sets the default editor
-if [ -f /Applications/TextMate.app/Contents/Resources/mate ]
+if [ -f ~/Applications/TextMate.app/Contents/Resources/mate ]
 then
 	export EDITOR='mate'
 #	export GIT_EDITOR='mate -wl1'
