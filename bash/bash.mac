@@ -22,7 +22,7 @@ alias vi="mvim -v"
 export NODE_PATH=/usr/local/lib/node
 
 # bash completion
-for file in /Users/ebruning/bin/completion/* #/usr/local/etc/bash_completion.d/*
+for file in /Users/ebruning/bin/completion/* 
 	do {
 		source $file
 	}
@@ -40,3 +40,5 @@ else
 	export EDITOR='vi'
 	export GIT_EDITOR='vi'
 fi
+
+. `brew --prefix`/etc/profile.d/z.sh
