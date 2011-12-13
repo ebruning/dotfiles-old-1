@@ -1,50 +1,46 @@
 "Used http://nvie.com/posts/how-i-boosted-my-vim/ to create vimrc
 " Set colors to 256
 " Added when syntax highlighting was lost
-set t_Co=256
+" set t_Co=256
 
 set nocompatible
 set noexrc
+syntax enable
+set encoding=utf-8
+set showcmd						" display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
 
-"Use pathogen
-"https://github.com/tpope/vim-pathogen.git
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
-" change the mapleader from \ to ,
-let mapleader=","
-
-"Edit and reload the vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Used for Gundo.vim
-nnoremap <F5> :GundoToggle<CR>
+" nnoremap <F5> :GundoToggle<CR>
 
 "Open a new file without having to write the current buffer
 set hidden
 
-set nowrap        " don't wrap lines
-set tabstop=4     " a tab is four spaces
-set backspace=indent,eol,start
-                  " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set shiftwidth=4  " number of spaces to use for autoindenting
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                  "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-                  "    shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
+" Viewer/Whitepace
+set nowrap        				" don't wrap lines
+set tabstop=4     				" a tab is four spaces
+set shiftwidth=4
+set number        				" always show line numbers
+set expandtab
+set backspace=indent,eol,start  " backspace through everything in insert mode
 
-set wildignore=*.swp,*.bak,*.pyc,*.class "Ignore certain files
 
-set title	  "Change the terminals title
+" Searching
+set hlsearch      				" highlight search terms
+set incsearch     				" show search matches as you type
+set ignorecase    				" ignore case when searching
+set smartcase     				" ignore case if search pattern is all lowercase,
+                  				" case-sensitive otherwise
+
+" Plugins
+"Use pathogen
+"https://github.com/tpope/vim-pathogen.git
+call pathogen#infect()
+
+"set wildignore=*.swp,*.bak,*.pyc,*.class "Ignore certain files
+
+"set title	  "Change the terminals title
 
 set visualbell           " don't beep
 set noerrorbells         " don't beep
@@ -53,31 +49,24 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
-filetype plugin indent on "Indenting intelligence
-
-if has('autocmd')
-	autocmd filetype python set expandtab	"Python specific settings
-endif
-
 "Syntax highlighting
 set background=dark
 
+"colorscheme mustang
 if &t_Co >= 256 || has("gui_running")
-	"echo "256"
-	colorscheme mustang
-	syntax on
+       "echo "256"
+       colorscheme mustang
+       syntax on
 elseif &t_Co > 2 || has("gui_running")
-	"switch syntax highlighting on, when the terminal has colors
-	"echo "2"
-	colorscheme mustang "zenburn
-	syntax on
+       "switch syntax highlighting on, when the terminal has colors
+       "echo "2"
+       colorscheme mustang "zenburn
+       syntax on
 endif
 
 "Shows tabs and spaces >...
 "set list
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-autocmd filetype html,xml set listchars-=tab:>. "Disable visible tabs for HTML,XML
 
 "Then, when in insert mode, ready to paste, if you press <F2>, Vim will switch
 "to paste mode, disabling all kinds of smartness and just pasting a whole
@@ -85,13 +74,13 @@ autocmd filetype html,xml set listchars-=tab:>. "Disable visible tabs for HTML,X
 "<F2>. Nice and simple
 set pastetoggle=<F2> "handle pasting large amounts of text
 
-set mouse=a "Enable the mouse
+"set mouse=a "Enable the mouse
 
 "remaps : to ; ie to save a file ;w
 nnoremap ; : 
 
 "Clears highlighed searches
-nmap <silent> ./ :nohlsearch<CR>
+"nmap <silent> ./ :nohlsearch<CR>
 
 "Allows you to sudo when already editing a file, use w!!
 cmap w!! w !sudo tee % >/dev/null
