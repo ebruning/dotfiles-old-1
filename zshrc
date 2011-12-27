@@ -38,3 +38,8 @@ export CC=/usr/bin/gcc-4.2
 export PATH="$HOME/bin:$PATH"
 
 export PROJECTS="$HOME/Projects"
+
+ . `brew --prefix`/etc/profile.d/z.sh
+ function precmd () {
+   z --add "$(pwd -P)"
+ }
