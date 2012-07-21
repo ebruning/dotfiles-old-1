@@ -5,10 +5,8 @@ ZSH=$HOME/Dropbox/dotfiles/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="macovsky"
-# ZSH_THEME="alanpeabody"
-# ZSH_THEME="gentoo"
-ZSH_THEME="minimal"
+# ZSH_THEME="minimal"
+ZSH_THEME="sorin"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -27,19 +25,24 @@ ZSH_THEME="minimal"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler brew gem rbates)
+plugins=(osx heroku pow git bundler brew gem github grails ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export CC=/usr/bin/gcc-4.2
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-export PATH="$HOME/bin:$PATH"
+# rvm settings
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-export PROJECTS="$HOME/Projects"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/sdk/grails-2.0.3/bin:$PATH"
 
- . `brew --prefix`/etc/profile.d/z.sh
- function precmd () {
-   z --add "$(pwd -P)"
- }
+export PROJECTS="$HOME/dev"
+export JAVA_HOME="/Library/Java/Home/"
+export GROOVY_HOME="$HOME/sdk/groovy-1.8.6"
+export GRAILS_HOME="$HOME/sdk/grails-2.0.3"
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
+
+unsetopt correctall
