@@ -7,6 +7,7 @@ ZSH=$HOME/Dropbox/dotfiles/oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="minimal"
 ZSH_THEME="sorin"
+#ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -25,24 +26,26 @@ ZSH_THEME="sorin"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx heroku pow git bundler brew gem github grails ruby)
+plugins=(rvm osx heroku pow git bundler brew gem github grails ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# rvm settings
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-export PATH="$HOME/bin:/usr/local/bin:$HOME/sdk/grails-2.0.3/bin:$PATH"
-
+export PATH="$HOME/bin:$HOME/sdk/grails-2.0.3/bin:$HOME/sdks/android-ndk-r8c:$HOME/sdks/android-sdks/platform-tools:$PATH"
 export PROJECTS="$HOME/dev"
-export JAVA_HOME="/Library/Java/Home/"
+export MOBILE="$HOME/Dropbox/Mobile"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export GROOVY_HOME="$HOME/sdk/groovy-1.8.6"
 export GRAILS_HOME="$HOME/sdk/grails-2.0.3"
+export NDK_MODULE_PATH=.
+export ANDROID_SDK_HOME="/Users/ebruning/sdk/android-sdks"
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-eval "$(rbenv init -)"
+# Alias
+alias vi=vim
 
 unsetopt correctall
+
+# boxen settings
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
