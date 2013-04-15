@@ -1,1 +1,0 @@
-/Users/ebruning/.vim/vim-pathogen/autoload/pathogen.vim
