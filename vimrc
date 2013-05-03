@@ -1,14 +1,16 @@
+" Turn on line numbers
 set number
 
 " Set font and size
 set guifont=Inconsolata-g:h13
 
 " Set theme
-color codeschool
+color grb256
 
 " Change the leader key to a tick 
 :let mapleader = "'"
 
+" Do not act like vi
 set nocompatible
 syntax enable
 set encoding=utf-8
