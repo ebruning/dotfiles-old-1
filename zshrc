@@ -42,7 +42,7 @@ export NDK_MODULE_PATH=.
 export ANDROID_SDK_HOME="/Users/ebruning/sdk/android-sdks"
 
 # Alias
-alias vi=vim
+[ -f "/opt/boxen/homebrew/bin/mvim" ] && alias vi=mvim 
 
 unsetopt correctall
 
