@@ -1,10 +1,10 @@
+"" Turn on line numbers
 set number
 
 " Set font and size
 set guifont=Inconsolata-g:h13
 
 " Set theme
-=======
 color grb256
 
 " Change the leader key to a tick 
