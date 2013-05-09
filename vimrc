@@ -35,8 +35,13 @@ set smartcase                   " ... unless they contain at least one capital l
 "" Set transparency
 :set transparency=15
 
+"" Resource vimrc file when saved
+au BufLeave ~/.vimrc :source ~/.vimrc
+
+"" Plugin configurations
+
 "" Turn on NerdTree. Toggle with NerdTreeToggle
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 "" Set toggling between source and header files for Obj-C
 "" :A :AS and :AT in new tab
