@@ -1,3 +1,6 @@
+"" Turn on pathogen
+call pathogen#infect()
+
 "" Turn on line numbers
 set number
 
@@ -31,3 +34,11 @@ set smartcase                   " ... unless they contain at least one capital l
 
 "" Set transparency
 :set transparency=15
+
+"" Turn on NerdTree. Toggle with NerdTreeToggle
+autocmd vimenter * NERDTree
+
+"" Set toggling between source and header files for Obj-C
+"" :A :AS and :AT in new tab
+autocmd FileType objc let g:alternateExtensions_h = "m" 
+autocmd FileType objc let g:alternateExtensions_m = "h"
