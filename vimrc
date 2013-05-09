@@ -1,27 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-"" Turn on line numbers
-=======
-" Turn on line numbers
->>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
-=======
-" Turn on line numbers
->>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
 set number
 
 " Set font and size
 set guifont=Inconsolata-g:h13
 
 " Set theme
-<<<<<<< HEAD
-<<<<<<< HEAD
-color grb256 
 =======
 color grb256
->>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
-=======
-color grb256
->>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
 
 " Change the leader key to a tick 
 :let mapleader = "'"
