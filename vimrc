@@ -1,14 +1,24 @@
+<<<<<<< HEAD
+"" Turn on line numbers
+=======
+" Turn on line numbers
+>>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
 set number
 
 " Set font and size
 set guifont=Inconsolata-g:h13
 
 " Set theme
-color codeschool
+<<<<<<< HEAD
+color grb256 
+=======
+color grb256
+>>>>>>> b670927a086ce0855edb1a97e695be8c14867f29
 
 " Change the leader key to a tick 
 :let mapleader = "'"
 
+" Do not act like vi
 set nocompatible
 syntax enable
 set encoding=utf-8
@@ -27,3 +37,5 @@ set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
+"" Set transparency
+:set transparency=15
