@@ -8,14 +8,15 @@ set number
 set guifont=Inconsolata-g:h13
 
 " Set theme
-color grb256
+syntax enable
+color twilight
+set background=dark
 
 " Change the leader key to a tick 
 :let mapleader = "'"
 
 " Do not act like vi
 set nocompatible
-syntax enable
 set encoding=utf-8
 set showcmd
 filetype plugin indent on
@@ -33,10 +34,17 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 "" Set transparency
-:set transparency=15
+":set transparency=15
 
 "" Resource vimrc file when saved
 au BufLeave ~/.vimrc :source ~/.vimrc
+
+"" statusline
+set statusline=%f\ %y\ [lines=%L]\ [x=%04v][y=%04l][%p%%]
+set laststatus=2
+
+"" Clang completion
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 "" Plugin configurations
 
@@ -47,3 +55,45 @@ au BufLeave ~/.vimrc :source ~/.vimrc
 "" :A :AS and :AT in new tab
 autocmd FileType objc let g:alternateExtensions_h = "m" 
 autocmd FileType objc let g:alternateExtensions_m = "h"
+
+"" Cocoa.vim settings
+map <leader>l :ListMethods
+
+"" Settings for NERDTree
+map <F2> :NERDTreeToggle<CR>
+
+" function to loop through a specified path and include each tag file
+if has('python')
+function! BuildTagsFromPath()
+python << EOF
+import os
+import vim
+
+tags = ''
+tagpath = "%s/%s" % (os.environ['HOME'], '.vimtags')
+
+if (os.path.exists(tagpath)):
+    for file in os.listdir(tagpath):
+        if (file != 'README'):
+            tags += "%s/%s," % (tagpath, file)
+
+cmdsettags = "set tags=%s" % tags
+vim.command(cmdsettags)
+EOF
+endfunction
+
+call BuildTagsFromPath()
+endif
+
+"" Easytags
+:let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
+
+"" Remap the arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
