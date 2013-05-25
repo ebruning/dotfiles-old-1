@@ -40,6 +40,10 @@ export GROOVY_HOME="$HOME/sdk/groovy-1.8.6"
 export GRAILS_HOME="$HOME/sdk/grails-2.0.3"
 export NDK_MODULE_PATH=.
 export ANDROID_SDK_HOME="/Users/ebruning/sdk/android-sdks"
+export EDITOR=mvim
+
+export MAC_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks"
+export IOS_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks" 
 
 # Alias
 [ -f "/opt/boxen/homebrew/bin/mvim" ] && alias vi=mvim 
