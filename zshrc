@@ -47,7 +47,7 @@ export IOS_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 # Alias
 [ -f "/opt/boxen/homebrew/bin/mvim" ] && alias vi=mvim 
-
+alias cp='rsync -p --progress'
 unsetopt correctall
 
 # boxen settings
