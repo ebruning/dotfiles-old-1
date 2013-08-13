@@ -9,7 +9,8 @@ set guifont=Inconsolata-g:h13
 
 " Set theme
 syntax enable
-color twilight
+"color twilight
+color ir_black
 set background=dark
 
 " Change the leader key to a tick 
@@ -62,38 +63,4 @@ map <leader>l :ListMethods
 "" Settings for NERDTree
 map <F2> :NERDTreeToggle<CR>
 
-" function to loop through a specified path and include each tag file
-if has('python')
-function! BuildTagsFromPath()
-python << EOF
-import os
-import vim
-
-tags = ''
-tagpath = "%s/%s" % (os.environ['HOME'], '.vimtags')
-
-if (os.path.exists(tagpath)):
-    for file in os.listdir(tagpath):
-        if (file != 'README'):
-            tags += "%s/%s," % (tagpath, file)
-
-cmdsettags = "set tags=%s" % tags
-vim.command(cmdsettags)
-EOF
-endfunction
-
-call BuildTagsFromPath()
-endif
-
-"" Easytags
-:let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
-
-"" Remap the arrow keys
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
