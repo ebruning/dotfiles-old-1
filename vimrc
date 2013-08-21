@@ -5,7 +5,7 @@ call pathogen#infect()
 set number
 
 " Set font and size
-set guifont=Inconsolata-g:h13
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13
 
 " Set theme
 syntax enable
