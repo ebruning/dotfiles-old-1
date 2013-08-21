@@ -60,6 +60,8 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 "" Settings for YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 
+"" Easytags settings
+let g:easytags_updatetime_warn=0
 "" Cocoa.vim settings
 map <leader>l :ListMethods
 
