@@ -125,3 +125,5 @@ endfunction
 function! MyMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
+" Multicousor settings
+let g:multi_cursor_start_key='<F3>'
