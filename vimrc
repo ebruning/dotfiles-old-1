@@ -39,6 +39,7 @@ set copyindent                  " copy the previous indentation on autoindenting
 set cindent                     " smart indenting for c-like code
 set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
 set guioptions-=r
+set guioptions-=L
 
 "" statusline
 set laststatus=2
