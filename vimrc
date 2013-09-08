@@ -256,7 +256,7 @@ let g:tagbar_type_objc = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " we can't use <tab> as our snippet key since we use that with YouCompleteMe
-let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
+"let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
 let g:UltiSnipsExpandTrigger       = "<m-s>"
 let g:UltiSnipsListSnippets        = "<c-m-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
