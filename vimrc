@@ -6,6 +6,8 @@ call vundle#rc()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'FuzzyFinder'
+Bundle 'L9'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/vim-indent-guides'
@@ -32,7 +34,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-markdown'
 
 " requires compiling
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 "" Turn on line numbers
 set number
@@ -140,6 +142,18 @@ set novisualbell
 "" :A :AS and :AT in new tab
 autocmd FileType objc let g:alternateExtensions_h = "m" 
 autocmd FileType objc let g:alternateExtensions_m = "h"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               Command-T                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:CommandTMaxHeight          = 30
+"let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
+
+set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
+nnoremap <leader>t :CommandT<cr>
+nnoremap <leader>n :CommandTBuffer<cr>
+nnoremap <leader>' :CommandTFlush<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               YouCompleteMe                             "
@@ -352,3 +366,16 @@ nnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
 vnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
 nnoremap <Leader>a, :Tabularize /,/l0r1<CR>
 vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              fuzzyfinder                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" This turns on the mrufile and mrucmd modes
+let g:fuf_modesDisable    = []
+let g:fuf_mrufile_maxItem = 1000
+let g:fuf_mrucmd_maxItem  = 400
+let g:fuf_file_exclude    = '\v\~$|\.(o|exe|dll|bak|class|meta|lock|orig|jar|swp)$|/test/data\.|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+
+nnoremap <Leader>fm :FufMruFile<CR>
+nnoremap <Leader>fc :FufMruCmd<CR>
