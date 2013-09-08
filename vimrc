@@ -43,6 +43,7 @@ set guifont=Bitstream\ Vera\ Sans\ Mono:h13
 "" Set theme
 syntax enable
 color ir_black
+"color twilight
 set background=dark
 
 "" Change the leader key to a tick 
@@ -100,7 +101,25 @@ highlight SignColumn guibg=black " Set the gutter/sign to black
 set noshowmode                  " Don't show the mode
 
 "" Resource vimrc file when saved
-au BufLeave ~/.vimrc :source ~/.vimrc
+"au BufLeave ~/.vimrc :source ~/.vimrc
+"au BufWritePost ~/.vimrc :source ~/.vimrc
+ function! UpdateVimRC()
+     for server in split(serverlist())
+         call remote_send(server, '<Esc>:source $HOME/.vimrc<CR>')
+     endfor
+ endfunction
+ augroup myvimrchooks
+ au!
+    autocmd bufwritepost .vimrc call UpdateVimRC()
+ augroup END
+
+"" UltiSnips is missing a setf trigger for snippets on BufEnter
+"autocmd vimrc BufEnter *.snippets setf snippets
+
+" In UltiSnips snippet files, we want actual tabs instead of spaces for indents.
+" US will use those tabs and convert them to spaces if expandtab is set when the
+" user wants to insert the snippet.
+"autocmd vimrc FileType snippets set noexpandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
