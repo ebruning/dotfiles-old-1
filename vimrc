@@ -1,5 +1,39 @@
-"" Turn on pathogen
-call pathogen#infect()
+"" Use vundle for handling bundles 
+filetype off    " Needed for vundle turn it on later
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          Vundle configuration                           "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'Raimondi/delimitMate'
+Bundle 'SirVer/ultisnips'
+Bundle 'Valloric/vim-indent-guides'
+Bundle 'dantler/vim-alternate'
+Bundle 'msanders/cocoa.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'itchyny/lightline.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'SirVer/ultisnips'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-surround'
+
+" requires compiling
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'matthias-guenther/hammer.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-markdown'
+
 
 "" Turn on line numbers
 set number
