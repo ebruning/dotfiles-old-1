@@ -113,6 +113,12 @@ set noshowmode                  " Don't show the mode
     autocmd bufwritepost .vimrc call UpdateVimRC()
  augroup END
 
+"" Disable sounds
+set noerrorbells visualbell t_vb=
+autocmd! GUIEnter * set vb t_vb=
+set noerrorbells
+set novisualbell
+
 "" UltiSnips is missing a setf trigger for snippets on BufEnter
 "autocmd vimrc BufEnter *.snippets setf snippets
 
