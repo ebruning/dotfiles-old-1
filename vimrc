@@ -22,9 +22,6 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-surround'
-
-" requires compiling
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
@@ -34,7 +31,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-markdown'
 
-
+" requires compiling
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'Valloric/YouCompleteMe'
 "" Turn on line numbers
 set number
 
