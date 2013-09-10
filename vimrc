@@ -147,7 +147,7 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 "                               Command-T                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:CommandTMaxHeight          = 15
+let g:CommandTMaxHeight          = 10
 "let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
 
 set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
