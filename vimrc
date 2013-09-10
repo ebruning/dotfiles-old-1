@@ -69,6 +69,8 @@ set noshowmode                  " Don't show the mode
 "" Resource vimrc file when saved
 au BufLeave ~/.vimrc :source ~/.vimrc
 
+"" Turn on/off paste mode
+set pastetoggle=<F4>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         Plugin Configurations                           "
