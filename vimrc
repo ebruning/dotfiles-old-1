@@ -147,7 +147,7 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 "                               Command-T                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:CommandTMaxHeight          = 30
+let g:CommandTMaxHeight          = 15
 "let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
 
 set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
@@ -333,7 +333,7 @@ let g:UltiSnipsExpandTrigger       = "<m-s>"
 let g:UltiSnipsListSnippets        = "<c-m-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
-let g:snips_author                 = 'Strahinja Val Markovic'
+let g:snips_author                 = 'Ethan Bruning'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Gundo                                   "
@@ -368,14 +368,7 @@ nnoremap <Leader>a, :Tabularize /,/l0r1<CR>
 vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              fuzzyfinder                                "
+"                               easymotion                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" This turns on the mrufile and mrucmd modes
-let g:fuf_modesDisable    = []
-let g:fuf_mrufile_maxItem = 1000
-let g:fuf_mrucmd_maxItem  = 400
-let g:fuf_file_exclude    = '\v\~$|\.(o|exe|dll|bak|class|meta|lock|orig|jar|swp)$|/test/data\.|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-
-nnoremap <Leader>fm :FufMruFile<CR>
-nnoremap <Leader>fc :FufMruCmd<CR>
+let g:EasyMotion_leader_key = '<Leader>e'
