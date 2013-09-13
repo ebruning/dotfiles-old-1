@@ -64,7 +64,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 
 "" Set tabs based on file types
-autocmd FileType objc :setlocal sw=4 ts=4 sts=4 " Two spaces for HTML files "
+autocmd FileType objc :setlocal sw=4 ts=4 sts=4 
 
 "" Searching
 set hlsearch                    " highlight matches
@@ -132,6 +132,8 @@ set novisualbell
 " user wants to insert the snippet.
 "autocmd vimrc FileType snippets set noexpandtab
 
+"" Set 'j to format a json file
+map <Leader>j :%!python -m json.tool<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         Plugin Configurations                           "
