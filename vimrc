@@ -36,61 +36,16 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'
 
-"" Turn on line numbers
-set number
-
-"" Set font and size
-set guifont=Bitstream\ Vera\ Sans\ Mono:h13
-
-"" Set theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Interface                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number                                    " Turn on line numbers
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
 syntax enable
 color ir_black
-"color twilight
 set background=dark
-
-"" Change the leader key to a tick 
-:let mapleader = "'"
-
-"" Do not act like vi
-set nocompatible
-set encoding=utf-8
-set showcmd
-filetype plugin indent on
-
-"" Handle white space
-set nowrap                      " don't wrap lines
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-
-"" Set tabs based on file types
-autocmd FileType objc :setlocal sw=4 ts=4 sts=4 
-
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-
-"" Indenting
-set autoindent                  " on new lines, match indent of previous line
-set copyindent                  " copy the previous indentation on autoindenting
-set cindent                     " smart indenting for c-like code
-set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
-set guioptions-=r
-set guioptions-=L
-
-"" statusline
 set laststatus=2
-
-"" Clang completion
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-"" none of these should be word dividers, so make them not be
-set iskeyword+=_,$,@,%,#
-
-"" Forces screen size
-set textwidth=80
+set textwidth=80                              " Forces screen size
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -100,14 +55,57 @@ if has("gui_macvim")
   set macmeta
 endif
 
-highlight SignColumn guibg=black " Set the gutter/sign to black
+highlight SignColumn guibg=black              " Set the gutter/sign to black
 
-"" Dont show mode
+set nocompatible                " Do not act like vi
+set encoding=utf-8
+"set showcmd
 set noshowmode                  " Don't show the mode
+filetype plugin indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           Key Configurations                            "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:let mapleader = "'"                     " Change the leader key to a tick 
+map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           White Space and Tabs                          "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nowrap                      " don't wrap lines
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+
+set autoindent                  " on new lines, match indent of previous line
+set copyindent                  " copy the previous indentation on autoindenting
+set cindent                     " smart indenting for c-like code
+set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
+set guioptions-=r
+set guioptions-=L
+
+autocmd FileType objc :setlocal sw=4 ts=4 sts=4   " Settings for ObjC 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Searching                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                              Extra Settings                             "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Clang completion
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+
+"" none of these should be word dividers, so make them not be
+set iskeyword+=_,$,@,%,#
+
 
 "" Resource vimrc file when saved
-"au BufLeave ~/.vimrc :source ~/.vimrc
-"au BufWritePost ~/.vimrc :source ~/.vimrc
  function! UpdateVimRC()
      for server in split(serverlist())
          call remote_send(server, '<Esc>:source $HOME/.vimrc<CR>')
@@ -132,8 +130,6 @@ set novisualbell
 " user wants to insert the snippet.
 "autocmd vimrc FileType snippets set noexpandtab
 
-"" Set 'j to format a json file
-map <Leader>j :%!python -m json.tool<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         Plugin Configurations                           "
@@ -152,7 +148,7 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 "                               Command-T                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:CommandTMaxHeight          = 10
+let g:CommandTMaxHeight = 10
 "let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
 
 set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
