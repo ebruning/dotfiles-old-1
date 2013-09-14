@@ -36,7 +36,7 @@ Bundle 'Valloric/YouCompleteMe'
 "Bundle 'xolox/vim-misc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              Interface                                  "
+" Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                                    " Turn on line numbers
 set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
@@ -45,7 +45,6 @@ color ir_black
 set background=dark
 set laststatus=2
 set textwidth=80                              " Forces screen size
-
 highlight SignColumn guibg=black              " Set the gutter/sign to black
 
 set nocompatible                " Do not act like vi
@@ -55,7 +54,7 @@ set noshowmode                  " Don't show the mode
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           Key Configurations                            "
+" Key Configurations                                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :let mapleader = "'"                     " Change the leader key to a tick 
 map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
@@ -73,7 +72,7 @@ endif
 nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           White Space and Tabs                          "
+" White Space and Tabs                                                    "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nowrap                      " don't wrap lines
 set expandtab                   " use spaces, not tabs (optional)
@@ -90,7 +89,7 @@ set guioptions-=L
 autocmd FileType objc :setlocal sw=4 ts=4 sts=4   " Settings for ObjC 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Searching                               "
+" Searching                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -129,7 +128,7 @@ au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
 set tags=tags;$HOME
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              Extra Settings                             "
+" Extra Settings                                                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" Clang completion
@@ -166,14 +165,16 @@ set noerrorbells visualbell t_vb=
 set wildmode=longest,list,full
 set wildmenu            " completion with menu
 set listchars=tab:▸\ ,eol:¬             " This changes the default display of tab and CR chars in list mode 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         Plugin Configurations                           "
+" Plugin Configurations                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Alternate                               "
+" Alternate                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Set toggling between source and header files for Obj-C
 "" :A :AS and :AT in new tab
@@ -212,8 +213,6 @@ let g:easytags_dynamic_files = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" f5 toggles the Gundo plugin window
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
 
@@ -314,7 +313,6 @@ let g:syntastic_check_on_open=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabular                                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " looks at the current line and the lines above and below it and aligns all the
 " equals signs; useful for when we have several lines of declarations
 nnoremap <Leader>a= :Tabularize /=<CR>
@@ -397,7 +395,6 @@ let g:tagbar_type_objc = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " we can't use <tab> as our snippet key since we use that with YouCompleteMe
 let g:UltiSnipsSnippetsDir         = $HOME . '~/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger       = "<m-s>"
