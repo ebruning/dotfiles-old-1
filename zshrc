@@ -6,8 +6,8 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="minimal"
-ZSH_THEME="sorin"
-#ZSH_THEME="agnoster"
+#ZSH_THEME="sorin"
+ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
