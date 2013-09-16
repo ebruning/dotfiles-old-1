@@ -17,8 +17,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
-Bundle 'xolox/vim-easytags'
-Bundle 'xolox/vim-misc'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -32,65 +30,35 @@ Bundle 'tpope/vim-markdown'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
-" requires compiling
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'git://git.wincent.com/command-t.git'  
+Bundle 'Valloric/YouCompleteMe'   
+"Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-misc'
 
-"" Turn on line numbers
-set number
-
-"" Set font and size
-set guifont=Bitstream\ Vera\ Sans\ Mono:h13
-
-"" Set theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Interface                                                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number                                    " Turn on line numbers
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
 syntax enable
 color ir_black
-"color twilight
 set background=dark
+set laststatus=2
+set textwidth=80                              " Forces screen size
+highlight SignColumn guibg=black              " Set the gutter/sign to black
 
-"" Change the leader key to a tick 
-:let mapleader = "'"
-
-"" Do not act like vi
-set nocompatible
+set nocompatible                " Do not act like vi
 set encoding=utf-8
-set showcmd
+"set showcmd
+set noshowmode                  " Don't show the mode
 filetype plugin indent on
 
-"" Handle white space
-set nowrap                      " don't wrap lines
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-
-"" Set tabs based on file types
-autocmd FileType objc :setlocal sw=4 ts=4 sts=4 
-
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
-
-"" Indenting
-set autoindent                  " on new lines, match indent of previous line
-set copyindent                  " copy the previous indentation on autoindenting
-set cindent                     " smart indenting for c-like code
-set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
-set guioptions-=r
-set guioptions-=L
-
-"" statusline
-set laststatus=2
-
-"" Clang completion
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
-"" none of these should be word dividers, so make them not be
-set iskeyword+=_,$,@,%,#
-
-"" Forces screen size
-set textwidth=80
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key Configurations                                                      "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:let mapleader = "'"                     " Change the leader key to a tick 
+map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
+set pastetoggle=<F4>
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -100,14 +68,78 @@ if has("gui_macvim")
   set macmeta
 endif
 
-highlight SignColumn guibg=black " Set the gutter/sign to black
+"nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -R *<CR>
+nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
+map <Leader>j :%t !python -m json.tool<CR> " pretty json file
 
-"" Dont show mode
-set noshowmode                  " Don't show the mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" White Space and Tabs                                                    "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nowrap                      " don't wrap lines
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+
+set autoindent                  " on new lines, match indent of previous line
+set copyindent                  " copy the previous indentation on autoindenting
+set cindent                     " smart indenting for c-like code
+set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
+set guioptions-=r
+set guioptions-=L
+
+autocmd FileType objc :setlocal sw=4 ts=4 sts=4   " Settings for ObjC 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Searching                                                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+" TODO: split this into separate plugin
+function! VisualSearch(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        execute "Ack " . l:pattern . ' %'
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+"Basically you press * or # to search for the current selection
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
+vnoremap <silent> gv :call VisualSearch('gv')<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctags                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
+set tags=tags;$HOME
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Extra Settings                                                          "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Clang completion
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+
+"" none of these should be word dividers, so make them not be
+set iskeyword+=_,$,@,%,#
+
 
 "" Resource vimrc file when saved
-"au BufLeave ~/.vimrc :source ~/.vimrc
-"au BufWritePost ~/.vimrc :source ~/.vimrc
  function! UpdateVimRC()
      for server in split(serverlist())
          call remote_send(server, '<Esc>:source $HOME/.vimrc<CR>')
@@ -118,11 +150,7 @@ set noshowmode                  " Don't show the mode
     autocmd bufwritepost .vimrc call UpdateVimRC()
  augroup END
 
-"" Disable sounds
 set noerrorbells visualbell t_vb=
-autocmd! GUIEnter * set vb t_vb=
-set noerrorbells
-set novisualbell
 
 "" UltiSnips is missing a setf trigger for snippets on BufEnter
 "autocmd vimrc BufEnter *.snippets setf snippets
@@ -132,16 +160,22 @@ set novisualbell
 " user wants to insert the snippet.
 "autocmd vimrc FileType snippets set noexpandtab
 
-"" Set 'j to format a json file
-map <Leader>j :%t !python -m json.tool<CR>
+" When you type the first tab, it will complete as much as possible, the second
+" tab hit will provide a list, the third and subsequent tabs will cycle through
+" completion options so you can complete the file without further keys
+set wildmode=longest,list,full
+set wildmenu            " completion with menu
+set listchars=tab:▸\ ,eol:¬             " This changes the default display of tab and CR chars in list mode 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         Plugin Configurations                           "
+" Plugin Configurations                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Alternate                               "
+" Alternate                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Set toggling between source and header files for Obj-C
 "" :A :AS and :AT in new tab
@@ -149,10 +183,14 @@ autocmd FileType objc let g:alternateExtensions_h = "m"
 autocmd FileType objc let g:alternateExtensions_m = "h"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               Command-T                                 "
+" Cocoa                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>l :ListMethods<CR>
 
-let g:CommandTMaxHeight          = 10
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Command-T                                                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:CommandTMaxHeight = 10
 "let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
 
 set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
@@ -160,30 +198,39 @@ nnoremap <leader>t :CommandT<cr>
 nnoremap <leader>n :CommandTBuffer<cr>
 nnoremap <leader>' :CommandTFlush<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               YouCompleteMe                             "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-
-"" Easytags settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Easytags                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:easytags_updatetime_warn=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                   Cocoa                                 "
+" Easymotion                                                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>l :ListMethods<CR>
+let g:EasyMotion_leader_key = '<Leader>e'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 NERDTree                                "
+" Easytags                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
-map <F2> :NERDTreeToggle<CR>
+let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_dynamic_files = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Lightline                               "
+" Gundo                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width=80
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Hammer                                                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" This makes sure that the browser is opened in the background
+if has("gui_macvim")
+  let g:HAMMER_BROWSER_ARGS = '-g'
+endif
+
+nnoremap <leader>m :w<cr>:Hammer<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -243,12 +290,18 @@ function! MyMode()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              Multicoursor                               "
+" Multicoursor                                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:multi_cursor_start_key='<F3>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               Syntastic                                 "
+" NERDTree                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
+map <F2> :NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_objc_check_header = 1
 let g:syntastic_error_symbol = '✗'
@@ -259,7 +312,19 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Tagbar                                  "
+" Tabular                                                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" looks at the current line and the lines above and below it and aligns all the
+" equals signs; useful for when we have several lines of declarations
+nnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a= :Tabularize /=<CR>
+nnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
+vnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
+nnoremap <Leader>a, :Tabularize /,/l0r1<CR>
+vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar                                                                  "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <F1> :TagbarToggle<CR> 
 let g:tagbar_ctags_bin = '/opt/boxen/homebrew/bin/ctags'
@@ -329,51 +394,20 @@ let g:tagbar_type_objc = {
 \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                UltiSnips                                "
+" UltiSnips                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " we can't use <tab> as our snippet key since we use that with YouCompleteMe
-"let g:UltiSnipsSnippetsDir         = $HOME . '/dotfiles/vim/UltiSnips'
+let g:UltiSnipsSnippetsDir         = $HOME . '~/.vim/UltiSnips'
 let g:UltiSnipsExpandTrigger       = "<m-s>"
 let g:UltiSnipsListSnippets        = "<c-m-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'Ethan Bruning'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Gundo                                   "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" f5 toggles the Gundo plugin window
-nnoremap <F5> :GundoToggle<CR>
-let g:gundo_width=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 hammer                                  "
+" YouCompleteMe                                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
 
-" This makes sure that the browser is opened in the background
-if has("gui_macvim")
-  let g:HAMMER_BROWSER_ARGS = '-g'
-endif
-
-nnoremap <leader>m :w<cr>:Hammer<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                tabular                                  "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" looks at the current line and the lines above and below it and aligns all the
-" equals signs; useful for when we have several lines of declarations
-nnoremap <Leader>a= :Tabularize /=<CR>
-vnoremap <Leader>a= :Tabularize /=<CR>
-nnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
-vnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
-nnoremap <Leader>a, :Tabularize /,/l0r1<CR>
-vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               easymotion                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:EasyMotion_leader_key = '<Leader>e'
