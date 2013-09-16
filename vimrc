@@ -133,7 +133,7 @@ set novisualbell
 "autocmd vimrc FileType snippets set noexpandtab
 
 "" Set 'j to format a json file
-map <Leader>j :%!python -m json.tool<CR>
+map <Leader>j :%t !python -m json.tool<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         Plugin Configurations                           "
