@@ -7,7 +7,7 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="minimal"
 #ZSH_THEME="sorin"
-ZSH_THEME="agnoster"
+ZSH_THEME="simple"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
