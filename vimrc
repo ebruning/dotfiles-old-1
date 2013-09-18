@@ -35,6 +35,7 @@ Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'git://git.wincent.com/command-t.git'  
 Bundle 'Valloric/YouCompleteMe'   
+Bundle 'sjl/splice.vim'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 
@@ -74,6 +75,7 @@ endif
 "nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -R *<CR>
 nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
 map <Leader>j :%t !python -m json.tool<CR> " pretty json file
+:nnoremap <CR> :nohlsearch<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " White Space and Tabs                                                    "
