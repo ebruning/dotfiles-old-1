@@ -6,8 +6,8 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="minimal"
-ZSH_THEME="sorin"
-#ZSH_THEME="agnoster"
+#ZSH_THEME="sorin"
+ZSH_THEME="simple"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export PATH="$HOME/bin:$HOME/sdk/grails-2.0.3/bin:$HOME/sdks/android-ndk-r8c:$HOME/sdks/android-sdks/platform-tools:$PATH"
+export PATH="$HOME/bin:$HOME/bin/android-ndk-r9:$PATH"
 export PROJECTS="$HOME/dev"
 export MOBILE="$HOME/Dropbox/Mobile"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
