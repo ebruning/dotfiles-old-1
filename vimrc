@@ -36,6 +36,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'git://git.wincent.com/command-t.git'  
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'sjl/splice.vim'
+Bundle 'mhinz/vim-startify'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 
@@ -305,6 +306,26 @@ let g:multi_cursor_start_key='<F3>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
 map <F2> :NERDTreeToggle<CR>
+
+""
+" Startify
+"
+let g:startify_change_to_vcs_root = 1
+ "let g:startify_custom_header =
+      "\ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
+ 
+let g:startify_custom_header = [
+      \ '   __      ___            ______ ____   ',
+      \ '   \ \    / (_)           |____  |___ \ ',
+      \ '    \ \  / / _ _ __ ___       / /  __) |',
+      \ '     \ \/ / | | ''_ ` _ \     / /  |__ <',
+      \ '      \  /  | | | | | | |   / /   ___) |',
+      \ '       \/   |_|_| |_| |_|  /_(_) |____/ ',
+      \ '',
+      \ '',
+      \ ]
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic                                                               "
