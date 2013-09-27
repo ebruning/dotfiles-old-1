@@ -32,6 +32,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+set -o vi
+
 export PATH="$HOME/bin:$HOME/bin/android-ndk-r9:$PATH"
 export PROJECTS="$HOME/dev"
 export MOBILE="$HOME/Dropbox/Mobile"
