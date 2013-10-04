@@ -37,6 +37,9 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'sjl/splice.vim'
 Bundle 'mhinz/vim-startify'
+Bundle 'mhinz/vim-toplevel'
+Bundle 'helino/vim-json'
+
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 
@@ -74,8 +77,7 @@ if has("gui_macvim")
 endif
 
 "nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -R *<CR>
-nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
-map <Leader>j :%t !python -m json.tool<CR> " pretty json file
+"nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
 :nnoremap <CR> :nohlsearch<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -419,6 +421,13 @@ let g:tagbar_type_objc = {
         \ 'enumeration'    : 'e'
     \ }
 \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toplevel                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:toplevel_vcs_list = [
+      \ ['git',   '.git'  ],
+      \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
