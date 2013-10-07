@@ -26,7 +26,7 @@ ZSH_THEME="simple"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rvm osx heroku pow git bundler brew gem github grails ruby)
+plugins=(osx heroku pow git bundler brew gem github grails ruby pod)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 set -o vi
 
-export PATH="$HOME/bin:$HOME/bin/android-ndk-r9:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/bin/android-ndk-r9:$PATH"
 export PROJECTS="$HOME/dev"
 export MOBILE="$HOME/Dropbox/Mobile"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
@@ -48,10 +48,22 @@ export MAC_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/MacOS
 export IOS_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks" 
 
 # Alias
-[ -f "/opt/boxen/homebrew/bin/mvim" ] && alias vi=mvim 
-alias cp='rsync -p --progress'
+[ -f "/usr/local/bin/mvim" ] && alias vi=mvim 
 unsetopt correctall
 
-# boxen settings
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+eval "$(rbenv init -)"
+
+function xc {
+    xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
+
+    if [[ `echo -n $xcode_proj | wc -m` == 0 ]]
+    then
+        echo "No xcworkspace/xcodeproj file found in the current directory."
+    else
+        open "$xcode_proj"
+    fi
+}
+
+# Hockyapp settings
+export HOCKEYAPP_API_TOKEN=""
 
