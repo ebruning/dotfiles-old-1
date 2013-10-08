@@ -1,3 +1,5 @@
+color vmilight
+
 "" Use vundle for handling bundles 
 filetype off    " Needed for vundle turn it on later
 set rtp+=~/.vim/bundle/vundle/
@@ -49,7 +51,6 @@ Bundle 'helino/vim-json'
 set number                                    " Turn on line numbers
 set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
 syntax enable
-color ir_black
 set background=dark
 set laststatus=2
 set textwidth=80                              " Forces screen size
