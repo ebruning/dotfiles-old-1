@@ -310,6 +310,20 @@ let g:multi_cursor_start_key='<F3>'
 "autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
 map <F2> :NERDTreeToggle<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spelling                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F6> :call ToggleSpellchecker()<cr>
+function! ToggleSpellchecker()
+  if(&spell == 1)
+    echo "Spell checker off"
+    set nospell
+  else
+    echo "Spell checker on"
+     set spell spelllang=en_us
+  endif
+endfunc
+
 ""
 " Startify
 "
