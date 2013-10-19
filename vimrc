@@ -16,7 +16,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'terryma/vim-multiple-cursors'
@@ -41,6 +41,7 @@ Bundle 'sjl/splice.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-toplevel'
 Bundle 'helino/vim-json'
+Bundle 'tomtom/tcomment_vim'
 
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
@@ -437,6 +438,11 @@ let g:tagbar_type_objc = {
     \ }
 \ }
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tcomment                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nnoremap <D-/> <C-_><C-_>
+" inoremap <D-/> <C-_><C-_>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toplevel                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
