@@ -48,7 +48,7 @@ export MAC_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/MacOS
 export IOS_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks" 
 
 # Alias
-[ -f "/usr/local/bin/mvim" ] && alias vi=mvim 
+[ -f "/usr/local/bin/mvim" ] && alias e=mvim 
 unsetopt correctall
 
 eval "$(rbenv init -)"
