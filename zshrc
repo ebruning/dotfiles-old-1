@@ -42,7 +42,7 @@ export GROOVY_HOME="$HOME/sdk/groovy-1.8.6"
 export GRAILS_HOME="$HOME/sdk/grails-2.0.3"
 export NDK_MODULE_PATH=.
 export ANDROID_SDK_HOME="/Users/ebruning/sdk/android-sdks"
-export EDITOR=mvim
+export EDITOR=vi
 
 export MAC_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks"
 export IOS_FRAMEWORK="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks" 
@@ -64,6 +64,6 @@ function xc {
     fi
 }
 
-# Hockyapp settings
-export HOCKEYAPP_API_TOKEN=""
-
+# Shenzhen settings
+export TESTFLIGHT_API_TOKEN="27180906b18dfd69768b70911d5614c8_MjcxMTQ3MjAxMi0wMS0wOSAxMjo1Nzo0MS4zMjA4NTc"
+export TESTFLIGHT_TEAM_TOKEN="3afc0cfd1f1209bc495646515afc875a_MjUwMTY2MjAxMy0wNy0xOCAxNzowMjoxMC41NDQzNDA"

@@ -15,7 +15,7 @@ Bundle 'msanders/cocoa.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'itchyny/lightline.vim'
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
@@ -28,7 +28,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-markdown'
+" Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rake'
@@ -42,7 +42,8 @@ Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-toplevel'
 Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
-
+Bundle 'junegunn/seoul256.vim'
+Bundle 'suan/vim-instant-markdown'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
 
@@ -208,7 +209,6 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFil
 nnoremap <leader>t :CommandT<cr>
 nnoremap <leader>n :CommandTBuffer<cr>
 nnoremap <leader>' :CommandTFlush<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easymotion                                                              "
