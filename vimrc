@@ -28,6 +28,7 @@ Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-rbenv'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
@@ -40,6 +41,9 @@ Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -136,6 +140,10 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""Ruby"
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 "" Clang completion
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
