@@ -25,7 +25,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-surround'
+" Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 " Bundle 'tpope/vim-markdown'
@@ -441,8 +441,9 @@ let g:tagbar_type_objc = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tcomment                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <D-/> <C-_><C-_>
-" inoremap <D-/> <C-_><C-_>
+" nnoremap <D-/> gcc
+" inoremap <D-/> call <Leader>__
+" vnoremap <D-/> gc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toplevel                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
