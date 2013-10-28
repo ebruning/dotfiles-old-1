@@ -1,12 +1,9 @@
 [hub]
- protocol = https
-
-[credential]
-	helper = /opt/boxen/bin/boxen-git-credential
+  protocol = https
 
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
-	editor = mvim -f
+; excludesfile = /opt/boxen/config/git/gitignore
+  editor = mvim -f
 
 [user]
 	name = Ethan Bruning
