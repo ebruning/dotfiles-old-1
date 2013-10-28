@@ -2,8 +2,7 @@
   protocol = https
 
 [core]
-; excludesfile = /opt/boxen/config/git/gitignore
-  editor = mvim -f
+	editor = mvim -f
 
 [user]
 	name = Ethan Bruning

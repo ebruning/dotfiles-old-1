@@ -136,8 +136,8 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctags                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
-set tags=tags;$HOME
+"au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
+"set tags=tags;$HOME
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
@@ -218,9 +218,9 @@ let g:EasyMotion_leader_key = '<Leader>e'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easytags                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
-let g:easytags_file = '~/.vim/tags'
-let g:easytags_dynamic_files = 1
+"let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
+"let g:easytags_file = '~/.vim/tags'
+"let g:easytags_dynamic_files = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
