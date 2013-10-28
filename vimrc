@@ -194,27 +194,9 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 map <leader>l :ListMethods<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T                                                               "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 10
-"let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
-
-set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
-nnoremap <leader>t :CommandT<cr>
-nnoremap <leader>n :CommandTBuffer<cr>
-nnoremap <leader>' :CommandTFlush<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easymotion                                                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EasyMotion_leader_key = '<Leader>e'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Easytags                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
-"let g:easytags_file = '~/.vim/tags'
-"let g:easytags_dynamic_files = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
@@ -225,14 +207,12 @@ let g:gundo_width=80
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Hammer                                                                  "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " This makes sure that the browser is opened in the background
 if has("gui_macvim")
   let g:HAMMER_BROWSER_ARGS = '-g'
 endif
 
 nnoremap <leader>m :w<cr>:Hammer<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline                                                               "
@@ -300,12 +280,6 @@ endfunction
 let g:multi_cursor_start_key='<F3>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
-map <F2> :NERDTreeToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F6> :call ToggleSpellchecker()<cr>
@@ -336,8 +310,6 @@ let g:startify_custom_header = [
       \ '',
       \ '',
       \ ]
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic                                                               "
@@ -438,12 +410,6 @@ let g:tagbar_type_objc = {
 " nnoremap <D-/> gcc
 " inoremap <D-/> call <Leader>__
 " vnoremap <D-/> gc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toplevel                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:toplevel_vcs_list = [
-      \ ['git',   '.git'  ],
-      \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
@@ -455,7 +421,6 @@ let g:UltiSnipsListSnippets        = "<c-m-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'Ethan Bruning'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe                                                           "
