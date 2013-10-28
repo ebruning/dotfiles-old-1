@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 set -o vi
 
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/bin/android-ndk-r9:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/bin/android-ndk-r9:$PATH:$HOME/.cask/bin"
 export PROJECTS="$HOME/Dropbox/Projects"
 export MOBILE="$HOME/Dropbox/Mobile"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
@@ -72,5 +72,5 @@ function distribute {
 }
 
 # Shenzhen settings
-source ./testflight.sh
+source $HOME/dotfiles/testflight.sh
 
