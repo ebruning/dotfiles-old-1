@@ -35,7 +35,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'git://git.wincent.com/command-t.git'  
+" Bundle 'git://git.wincent.com/command-t.git'  
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'sjl/splice.vim'
 Bundle 'mhinz/vim-startify'
@@ -46,7 +46,8 @@ Bundle 'junegunn/seoul256.vim'
 Bundle 'suan/vim-instant-markdown'
 "Bundle 'xolox/vim-easytags'
 "Bundle 'xolox/vim-misc'
-
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-ruby/vim-ruby'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -199,17 +200,25 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>l :ListMethods<CR>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Control-P                                                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <F2> :CtrlP<CR>
+inoremap <leader>t :CtrlP<CR>
+nnoremap <F2> :CtrlP<CR>
+nnoremap <leader>t :CtrlP<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 10
-"let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
-
-set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
-nnoremap <leader>t :CommandT<cr>
-nnoremap <leader>n :CommandTBuffer<cr>
-nnoremap <leader>' :CommandTFlush<cr>
-
+" let g:CommandTMaxHeight = 10
+" let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
+" 
+" set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
+" nnoremap <leader>t :CommandT<cr>
+" nnoremap <leader>n :CommandTBuffer<cr>
+" nnoremap <leader>' :CommandTFlush<cr>
+" 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Easymotion                                                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -309,7 +318,7 @@ let g:multi_cursor_start_key='<F3>'
 " NERDTree                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
-map <F2> :NERDTreeToggle<CR>
+" map <F2> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling                                                                "
