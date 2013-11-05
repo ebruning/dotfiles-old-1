@@ -15,8 +15,6 @@ Bundle 'msanders/cocoa.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'itchyny/lightline.vim'
-" Bundle 'scrooloose/nerdtree'
-"Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'terryma/vim-multiple-cursors'
@@ -25,17 +23,15 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-" Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-rbenv'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'git://git.wincent.com/command-t.git'  
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'sjl/splice.vim'
 Bundle 'mhinz/vim-startify'
@@ -44,10 +40,11 @@ Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'suan/vim-instant-markdown'
-"Bundle 'xolox/vim-easytags'
-"Bundle 'xolox/vim-misc'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,6 +140,10 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""Ruby"
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 "" Clang completion
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
@@ -225,13 +226,6 @@ nnoremap <leader>t :CtrlP<CR>
 let g:EasyMotion_leader_key = '<Leader>e'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Easytags                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:easytags_cmd = '/opt/boxen/homebrew/bin/ctags'
-"let g:easytags_file = '~/.vim/tags'
-"let g:easytags_dynamic_files = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
@@ -240,14 +234,12 @@ let g:gundo_width=80
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Hammer                                                                  "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " This makes sure that the browser is opened in the background
 if has("gui_macvim")
   let g:HAMMER_BROWSER_ARGS = '-g'
 endif
 
 nnoremap <leader>m :w<cr>:Hammer<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline                                                               "
@@ -315,12 +307,6 @@ endfunction
 let g:multi_cursor_start_key='<F3>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd vimenter * NERDTree "Turn on NerdTree. Toggle with NerdTreeToggle
-" map <F2> :NERDTreeToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F6> :call ToggleSpellchecker()<cr>
@@ -351,8 +337,6 @@ let g:startify_custom_header = [
       \ '',
       \ '',
       \ ]
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic                                                               "
@@ -450,14 +434,9 @@ let g:tagbar_type_objc = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tcomment                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <D-/> <C-_><C-_>
-" inoremap <D-/> <C-_><C-_>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toplevel                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:toplevel_vcs_list = [
-      \ ['git',   '.git'  ],
-      \ ]
+" nnoremap <D-/> gcc
+" inoremap <D-/> call <Leader>__
+" vnoremap <D-/> gc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
@@ -469,7 +448,6 @@ let g:UltiSnipsListSnippets        = "<c-m-s>"
 let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'Ethan Bruning'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe                                                           "
