@@ -135,7 +135,8 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 " Ctags                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
-"set tags=tags;$HOME
+set tags=./tags,tags
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
