@@ -1,4 +1,4 @@
-color vmilight
+color sorcerer
 
 "" Use vundle for handling bundles 
 filetype off    " Needed for vundle turn it on later
@@ -33,7 +33,6 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Valloric/YouCompleteMe'   
-Bundle 'sjl/splice.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-toplevel'
 Bundle 'helino/vim-json'
@@ -43,6 +42,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
+Bundle 'mileszs/ack.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
