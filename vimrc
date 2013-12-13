@@ -1,4 +1,5 @@
-color sorcerer
+" color sorcerer
+color jellybeans 
 
 "" Use vundle for handling bundles 
 filetype off    " Needed for vundle turn it on later
@@ -43,6 +44,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -79,6 +81,9 @@ endif
 "nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -R *<CR>
 "nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
 :nnoremap <CR> :nohlsearch<cr>
+
+" Silver searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " White Space and Tabs                                                    "
