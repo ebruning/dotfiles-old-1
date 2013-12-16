@@ -138,7 +138,6 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 "au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
 set tags=./tags,tags
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -205,21 +204,9 @@ map <leader>l :ListMethods<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Control-P                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <F2>:CtrlP<CR>
-" inoremap <leader>t :CtrlP<CR>
-nnoremap <F2>:CtrlP<CR>
+inoremap <F2> :CtrlP<CR>
+nnoremap <F2> :CtrlP<CR>
 nnoremap <leader>t:CtrlP<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T                                                               "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:CommandTMaxHeight = 10
-" let g:CommandTMatchWindowReverse = 1 " shows results in reverse order
-" 
-" set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles
-" nnoremap <leader>t :CommandT<cr>
-" nnoremap <leader>n :CommandTBuffer<cr>
-" nnoremap <leader>' :CommandTFlush<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
