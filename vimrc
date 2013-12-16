@@ -32,7 +32,6 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-rbenv'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-indent-guides'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-toplevel'
@@ -192,7 +191,6 @@ highlight SpecialKey guifg=#4a4a59
 " Plugin Configurations                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Alternate                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -224,11 +222,6 @@ nnoremap <leader>t:CtrlP<CR>
 " nnoremap <leader>t :CommandT<cr>
 " nnoremap <leader>n :CommandTBuffer<cr>
 " nnoremap <leader>' :CommandTFlush<cr>
-" 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Easymotion                                                              "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:EasyMotion_leader_key = '<Leader>e'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
