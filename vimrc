@@ -206,14 +206,14 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>l :ListMethods<CR>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Control-P                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <F2> :CtrlP<CR>
-inoremap <leader>t :CtrlP<CR>
-nnoremap <F2> :CtrlP<CR>
-nnoremap <leader>t :CtrlP<CR>
+inoremap <F2>:CtrlP<CR>
+" inoremap <leader>t :CtrlP<CR>
+nnoremap <F2>:CtrlP<CR>
+nnoremap <leader>t:CtrlP<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
