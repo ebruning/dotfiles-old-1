@@ -77,8 +77,6 @@ if has("gui_macvim")
   set macmeta
 endif
 
-"nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -R *<CR>
-"nmap <leader>ct :!/opt/boxen/homebrew/bin/ctags -e expand('%:p:h')<CR>
 :nnoremap <CR> :nohlsearch<cr>
 
 " Silver searcher
@@ -363,7 +361,7 @@ vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
 " Tagbar                                                                  "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <F1> :TagbarToggle<CR> 
-let g:tagbar_ctags_bin = '/opt/boxen/homebrew/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
