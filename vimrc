@@ -155,15 +155,16 @@ set iskeyword+=_,$,@,%,#
 "" Resource vimrc file when saved
 au BufLeave ~/.vimrc :source ~/.vimrc
 
- function! UpdateVimRC()
-     for server in split(serverlist())
-         call remote_send(server, '<Esc>:source $HOME/.vimrc<CR>')
-     endfor
- endfunction
- augroup myvimrchooks
- au!
-    autocmd bufwritepost .vimrc call UpdateVimRC()
- augroup END
+function! UpdateVimRC()
+    for server in split(serverlist())
+        call remote_send(server, '<Esc>:source $HOME/.vimrc<CR>')
+    endfor
+endfunction
+
+augroup myvimrchooks
+au!
+   autocmd bufwritepost .vimrc call UpdateVimRC()
+augroup END
 
 set noerrorbells visualbell t_vb=
 
