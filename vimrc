@@ -38,12 +38,13 @@ Bundle 'mhinz/vim-toplevel'
 Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
+Bundle 'tpope/vim-vinegar'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -203,11 +204,10 @@ autocmd FileType objc let g:alternateExtensions_m = "h"
 map <leader>l :ListMethods<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Control-P                                                               "
+" Command-T                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <F2> :CtrlP<CR>
-nnoremap <F2> :CtrlP<CR>
-nnoremap <leader>t:CtrlP<CR>
+let g:CommandTMaxHeight          = 20
+set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles,*.class
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
