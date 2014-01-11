@@ -31,7 +31,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-rbenv'
 Bundle 'Valloric/MatchTagAlways'
-Bundle 'Valloric/vim-indent-guides'
+" Bundle 'Valloric/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'   
 Bundle 'mhinz/vim-startify'
 Bundle 'mhinz/vim-toplevel'
@@ -44,7 +44,8 @@ Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-vinegar'
+" Bundle 'tpope/vim-vinegar'
+Bundle 'airblade/vim-gitgutter'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
