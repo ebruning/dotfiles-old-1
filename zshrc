@@ -51,7 +51,9 @@ export EDITOR="mvim -f"
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim 
 unsetopt correctall
 
-eval "$(rbenv init -)"
+# RBENV
+# eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 function xc {
     xcode_proj=`find . -name "*.xc*" -d 1 | sort -r | head -1`
@@ -72,5 +74,5 @@ function distribute {
 }
 
 # Shenzhen settings
-source $HOME/dotfiles/testflight.sh
+# source $HOME/dotfiles/testflight.sh
 
