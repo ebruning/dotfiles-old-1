@@ -47,6 +47,7 @@ Bundle 'rking/ag.vim'
 " Bundle 'tpope/vim-vinegar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jaxbot/github-issues.vim'
+Bundle 'gregsexton/gitv'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
