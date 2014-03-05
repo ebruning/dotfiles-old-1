@@ -48,6 +48,7 @@ export EDITOR="mvim -f"
 
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim 
+# [ -f "/Applications/Atom.app" ] && alias a=atom 
 unsetopt correctall
 
 # RBENV
@@ -73,5 +74,5 @@ function distribute {
 }
 
 # Shenzhen settings
-# source $HOME/dotfiles/testflight.sh
+source /Users/ethan/Dropbox/AppData/testflight.sh
 
