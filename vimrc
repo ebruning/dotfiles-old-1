@@ -48,6 +48,7 @@ Bundle 'rking/ag.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jaxbot/github-issues.vim'
 Bundle 'gregsexton/gitv'
+Bundle "mattn/emmet-vim"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
