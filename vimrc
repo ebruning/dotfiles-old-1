@@ -1,5 +1,5 @@
-" color sorcerer
-color jellybeans 
+color sorcerer
+"color jellybeans 
 
 "" Use vundle for handling bundles 
 filetype off    " Needed for vundle turn it on later
