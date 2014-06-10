@@ -9,46 +9,26 @@ call vundle#rc()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Vundle configuration                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Cleaning up bundles
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
 Bundle 'dantler/vim-alternate'
-Bundle 'msanders/cocoa.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
 Bundle 'itchyny/lightline.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
-Bundle 'terryma/vim-multiple-cursors'
 Bundle 'gmarik/vundle'
-Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'matthias-guenther/hammer.vim'
-Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-rbenv'
-Bundle 'Valloric/MatchTagAlways'
-" Bundle 'Valloric/vim-indent-guides'
-" Bundle 'Valloric/YouCompleteMe'   
-Bundle 'mhinz/vim-startify'
-Bundle 'mhinz/vim-toplevel'
+Bundle 'sjl/gundo.vim'
 Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'wincent/Command-T'
-Bundle 'vim-ruby/vim-ruby'
+Bundle 'mhinz/vim-startify'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
-Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-" Bundle 'tpope/vim-vinegar'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'jaxbot/github-issues.vim'
-Bundle 'gregsexton/gitv'
-Bundle "mattn/emmet-vim"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -141,7 +121,7 @@ vnoremap <silent> gv :call VisualSearch('gv')<CR>
 " Ctags                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
-set tags=./tags,tags
+set tags=~/vim/tags,./tags,tags,.tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
@@ -220,14 +200,10 @@ nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Hammer                                                                  "
+" EasyTags                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This makes sure that the browser is opened in the background
-if has("gui_macvim")
-  let g:HAMMER_BROWSER_ARGS = '-g'
-endif
-
-nnoremap <leader>m :w<cr>:Hammer<cr>
+" :let g:easytags_file = '~/.vim/tags'
+:let g:easytags_file = './.tags'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline                                                               "
@@ -337,6 +313,7 @@ highlight SyntasticWarningSign guifg=yellow
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
 
+let g:syntastic_java_javac_classpath = '/Users/ethan/bin/sdk/platforms/android-19/*.jar:/Users/ethan/Dropbox/Mobile/Libs/2.0.2/Android/*.jar:../bin/classes'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabular                                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -442,4 +419,64 @@ let g:snips_author                 = 'Ethan Bruning'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+" XML formatter
+function! DoFormatXML() range
+	" Save the file type
+	let l:origft = &ft
+
+	" Clean the file type
+	set ft=
+
+	" Add fake initial tag (so we can process multiple top-level elements)
+	exe ":let l:beforeFirstLine=" . a:firstline . "-1"
+	if l:beforeFirstLine < 0
+		let l:beforeFirstLine=0
+	endif
+	exe a:lastline . "put ='</PrettyXML>'"
+	exe l:beforeFirstLine . "put ='<PrettyXML>'"
+	exe ":let l:newLastLine=" . a:lastline . "+2"
+	if l:newLastLine > line('$')
+		let l:newLastLine=line('$')
+	endif
+
+	" Remove XML header
+	exe ":" . a:firstline . "," . a:lastline . "s/<\?xml\\_.*\?>\\_s*//e"
+
+	" Recalculate last line of the edited code
+	let l:newLastLine=search('</PrettyXML>')
+
+	" Execute external formatter
+	exe ":silent " . a:firstline . "," . l:newLastLine . "!xmllint --noblanks --format --recover -"
+
+	" Recalculate first and last lines of the edited code
+	let l:newFirstLine=search('<PrettyXML>')
+	let l:newLastLine=search('</PrettyXML>')
+	
+	" Get inner range
+	let l:innerFirstLine=l:newFirstLine+1
+	let l:innerLastLine=l:newLastLine-1
+
+	" Remove extra unnecessary indentation
+	exe ":silent " . l:innerFirstLine . "," . l:innerLastLine "s/^  //e"
+
+	" Remove fake tag
+	exe l:newLastLine . "d"
+	exe l:newFirstLine . "d"
+
+	" Put the cursor at the first line of the edited code
+	exe ":" . l:newFirstLine
+
+	" Restore the file type
+	exe "set ft=" . l:origft
+endfunction
+command! -range=% FormatXML <line1>,<line2>call DoFormatXML()
+
+nmap <silent> <leader>x :%FormatXML<CR>
+vmap <silent> <leader>x :FormatXML<CR>
+
+"Added by android-vim:
+set tags+=/Users/ethan/.vim/tags
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let g:SuperTabDefaultCompletionType = 'context'
 
