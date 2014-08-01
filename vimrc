@@ -11,7 +11,7 @@ call vundle#rc()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Cleaning up bundles
-Bundle 'Raimondi/delimitMate'
+Bundle 'jiangmiao/auto-pairs'
 Bundle 'SirVer/ultisnips'
 Bundle 'dantler/vim-alternate'
 Bundle 'itchyny/lightline.vim'
@@ -29,6 +29,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
+Bundle 'Keithbsmiley/swift.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
