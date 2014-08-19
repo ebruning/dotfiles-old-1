@@ -309,17 +309,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
 
 let g:syntastic_java_javac_classpath = '/Users/ethan/bin/sdk/platforms/android-19/*.jar:/Users/ethan/Dropbox/Mobile/Libs/2.0.2/Android/*.jar:../bin/classes'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabular                                                                 "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" looks at the current line and the lines above and below it and aligns all the
-" equals signs; useful for when we have several lines of declarations
-nnoremap <Leader>a= :Tabularize /=<CR>
-vnoremap <Leader>a= :Tabularize /=<CR>
-nnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
-vnoremap <Leader>a/ :Tabularize /\/\//l2c1l0<CR>
-nnoremap <Leader>a, :Tabularize /,/l0r1<CR>
-vnoremap <Leader>a, :Tabularize /,/l0r1<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar                                                                  "
@@ -465,6 +454,7 @@ function! DoFormatXML() range
 	" Restore the file type
 	exe "set ft=" . l:origft
 endfunction
+
 command! -range=% FormatXML <line1>,<line2>call DoFormatXML()
 
 nmap <silent> <leader>x :%FormatXML<CR>
