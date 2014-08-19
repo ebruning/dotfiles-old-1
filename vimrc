@@ -27,7 +27,6 @@ Bundle 'wincent/Command-T'
 Bundle 'mhinz/vim-startify'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
-Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'Keithbsmiley/swift.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -200,12 +199,6 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFil
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EasyTags                                                                "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" :let g:easytags_file = '~/.vim/tags'
-:let g:easytags_file = './.tags'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline                                                               "
