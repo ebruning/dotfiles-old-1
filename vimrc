@@ -24,7 +24,6 @@ Bundle 'helino/vim-json'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'wincent/Command-T'
-Bundle 'mhinz/vim-startify'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
@@ -268,24 +267,6 @@ function! ToggleSpellchecker()
      set spell spelllang=en_us
   endif
 endfunc
-
-""
-" Startify
-"
-let g:startify_change_to_vcs_root = 1
- "let g:startify_custom_header =
-      "\ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
- 
-let g:startify_custom_header = [
-      \ '   __      ___            ______ ____   ',
-      \ '   \ \    / (_)           |____  |___ \ ',
-      \ '    \ \  / / _ _ __ ___       / /  __) |',
-      \ '     \ \/ / | | ''_ ` _ \     / /  |__ <',
-      \ '      \  /  | | | | | | |   / /   ___) |',
-      \ '       \/   |_|_| |_| |_|  /_(_) |____/ ',
-      \ '',
-      \ '',
-      \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic                                                               "
