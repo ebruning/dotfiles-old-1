@@ -29,6 +29,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'xolox/vim-misc'
 Bundle 'Keithbsmiley/swift.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'tomswartz07/vim-todo'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -372,7 +373,7 @@ let g:snips_author                 = 'Ethan Bruning'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe                                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " XML formatter
