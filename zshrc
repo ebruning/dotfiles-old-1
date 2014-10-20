@@ -39,7 +39,7 @@ set -o vi
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/bin/android-ndk-r9:$HOME/.cask/bin:$HOME/bin/sdk/tools:$HOME/bin/sdk/platform-tools:$PATH"
 export PROJECTS="$HOME/Dropbox/Projects"
 export MOBILE="$HOME/Dropbox/Mobile"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export GROOVY_HOME="$HOME/sdk/groovy-1.8.6"
 export GRAILS_HOME="$HOME/sdk/grails-2.0.3"
 export NDK_MODULE_PATH=.
