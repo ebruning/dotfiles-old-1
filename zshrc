@@ -9,6 +9,7 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # ZSH_THEME="sorin"
 # ZSH_THEME="simple"
 ZSH_THEME="kolo"
+# ZSH_THEME="avit"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -46,6 +47,8 @@ export NDK_MODULE_PATH=.
 export ANDROID_SDK_HOME="/Users/ethan/bin/sdk"
 export ANDROID_SDK="/Users/ethan/bin/sdk"
 export EDITOR="mvim -f"
+export ANDROID_SDK_HOME="/Users/ethan"
+
 
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim 
@@ -73,6 +76,8 @@ function distribute {
   # TODO: check if build succeeds before uploading
   ipa distribute
 }
+
+function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
 # Shenzhen settings
 source /Users/ethan/Dropbox/AppData/testflight.sh
