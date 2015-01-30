@@ -4,6 +4,7 @@
 [core]
 	editor = mvim -f
 	trustctime = false
+	excludesfile = /Users/ethan/.gitignore_global
 
 [user]
 	name = Ethan Bruning
@@ -18,13 +19,9 @@
 [credential]
 	helper = osxkeychain
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[mergetool "Kaleidoscope"]
-[merge]
-[difftool "Kaleidoscope"]
-[difftool]
-[mergetool]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
 [diff]
 	tool = Kaleidoscope
 [difftool "sourcetree"]
