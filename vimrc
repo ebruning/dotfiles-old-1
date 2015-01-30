@@ -1,4 +1,4 @@
-color sorcerer
+color kalisi
 "color jellybeans 
 
 filetype off    " Needed for vundle turn it on later
