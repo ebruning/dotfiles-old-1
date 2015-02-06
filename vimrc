@@ -1,5 +1,5 @@
-color kalisi
-"color jellybeans 
+"color kalisi
+color jellybeans 
 
 filetype off    " Needed for vundle turn it on later
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -11,25 +11,24 @@ Plugin 'gmarik/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Cleaning up bundles
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'SirVer/ultisnips'
-Bundle 'dantler/vim-alternate'
-Bundle 'itchyny/lightline.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'sjl/gundo.vim'
-Bundle 'helino/vim-json'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'suan/vim-instant-markdown'
-Bundle 'wincent/Command-T'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'majutsushi/tagbar'
-Bundle 'xolox/vim-misc'
-Bundle 'Keithbsmiley/swift.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'tomswartz07/vim-todo'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'SirVer/ultisnips'
+Plugin 'dantler/vim-alternate'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'sjl/gundo.vim'
+Plugin 'helino/vim-json'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'wincent/Command-T'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'Keithbsmiley/swift.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomswartz07/vim-todo'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
