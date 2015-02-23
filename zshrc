@@ -49,10 +49,10 @@ export ANDROID_SDK="/Users/ethan/bin/sdk"
 export EDITOR="mvim -f"
 export ANDROID_SDK_HOME="/Users/ethan"
 
-
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim 
 # [ -f "/Applications/Atom.app" ] && alias a=atom 
+alias git-ls="exa -bghHliS"
 unsetopt correctall
 
 # RBENV
@@ -80,5 +80,14 @@ function distribute {
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
 # Shenzhen settings
-source /Users/ethan/Dropbox/AppData/testflight.sh
+#source /Users/ethan/Dropbox/AppData/testflight.sh
 
+# Antigen
+# source "$HOME/.antigen/antigen.zsh"
+
+# antigen-use oh-my-zsh
+# antigen-bundle arialdomartini/oh-my-git
+# antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+#
+# antigen-apply
+. `brew --prefix`/etc/profile.d/z.sh
