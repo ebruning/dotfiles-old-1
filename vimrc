@@ -2,33 +2,34 @@
 color jellybeans 
 
 filetype off    " Needed for vundle turn it on later
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-Plugin 'gmarik/Vundle.vim'
+"set rtp+=~/.vim/bundle/Vundle.vim/
+"call vundle#rc()
+"Plugin 'gmarik/Vundle.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          Vundle configuration                           "
+"                          Plugins                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
 
-" Cleaning up bundles
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'SirVer/ultisnips'
-Plugin 'dantler/vim-alternate'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'sjl/gundo.vim'
-Plugin 'helino/vim-json'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'wincent/Command-T'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-misc'
-Plugin 'Keithbsmiley/swift.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tomswartz07/vim-todo'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'dantler/vim-alternate'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'sjl/gundo.vim'
+Plug 'helino/vim-json'
+Plug 'tomtom/tcomment_vim'
+Plug 'wincent/Command-T'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-misc'
+Plug 'Keithbsmiley/swift.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tomswartz07/vim-todo'
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
@@ -36,7 +37,7 @@ Plugin 'tomswartz07/vim-todo'
 set number                                    " Turn on line numbers
 "set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
 " set guifont=Inconsolata\ for\ Powerline:h13   " Set font and size
-set guifont=inconsolata-g\ for\ powerline:h12
+set guifont=Inconsolata-g\ for\ powerline:h12
 syntax enable
 set background=dark
 set laststatus=2
