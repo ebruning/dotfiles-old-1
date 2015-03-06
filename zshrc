@@ -8,8 +8,9 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # ZSH_THEME="minimal"
 # ZSH_THEME="sorin"
 # ZSH_THEME="simple"
-ZSH_THEME="kolo"
+# ZSH_THEME="kolo"
 # ZSH_THEME="avit"
+ZSH_THEME="gentoo"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
