@@ -85,3 +85,12 @@ function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
 # Z completiond
 . `brew --prefix`/etc/profile.d/z.sh
+
+# oh-my-git 
+source "$HOME/.antigen/antigen.zsh"
+
+antigen-use oh-my-zsh
+antigen-bundle arialdomartini/oh-my-git
+antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+
+antigen-apply
