@@ -83,4 +83,5 @@ function dnsflush {
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
+# Z completiond
 . `brew --prefix`/etc/profile.d/z.sh
