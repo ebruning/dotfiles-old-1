@@ -19,3 +19,6 @@
 [submodule "vim/bundle/scss"]
 	path = vim/bundle/scss
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
