@@ -83,8 +83,6 @@ function dnsflush {
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
-# Shenzhen settings
-#source /Users/ethan/Dropbox/AppData/testflight.sh
 
 # Antigen
 # source "$HOME/.antigen/antigen.zsh"
