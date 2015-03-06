@@ -83,13 +83,4 @@ function dnsflush {
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
-
-# Antigen
-# source "$HOME/.antigen/antigen.zsh"
-
-# antigen-use oh-my-zsh
-# antigen-bundle arialdomartini/oh-my-git
-# antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
-#
-# antigen-apply
 . `brew --prefix`/etc/profile.d/z.sh
