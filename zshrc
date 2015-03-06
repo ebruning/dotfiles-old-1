@@ -77,6 +77,10 @@ function distribute {
   ipa distribute
 }
 
+function dnsflush {
+  sudo discoveryutil mdnsflushcache
+}
+
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
 # Shenzhen settings
