@@ -8,8 +8,9 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # ZSH_THEME="minimal"
 # ZSH_THEME="sorin"
 # ZSH_THEME="simple"
-ZSH_THEME="kolo"
+# ZSH_THEME="kolo"
 # ZSH_THEME="avit"
+ZSH_THEME="gentoo"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -83,15 +84,14 @@ function dnsflush {
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
 
-# Shenzhen settings
-#source /Users/ethan/Dropbox/AppData/testflight.sh
+# Z completiond
+. `brew --prefix`/etc/profile.d/z.sh
 
-# Antigen
+# # oh-my-git 
 # source "$HOME/.antigen/antigen.zsh"
-
+#
 # antigen-use oh-my-zsh
 # antigen-bundle arialdomartini/oh-my-git
 # antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 #
 # antigen-apply
-. `brew --prefix`/etc/profile.d/z.sh

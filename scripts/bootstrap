@@ -40,10 +40,10 @@ setup_directories () {
 }
 
 ## Clone oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git DOTFILES_ROOT/oh-my-zsh
+# git clone git://github.com/robbyrussell/oh-my-zsh.git DOTFILES_ROOT/oh-my-zsh
 
 ## Clone my atom config files
-git clone https://github.com/ebruning/atom.git DOTFILES_ROOT/atom
+# git clone https://github.com/ebruning/atom.git DOTFILES_ROOT/atom
 
 ## Synlink files
 link_files DOTFILES_ROOT/vimrc $HOME/.vimrc
@@ -57,4 +57,4 @@ link_files DOTFILES_ROOT/uncrustifyconfig $HOME/.uncrustify/uncrustify.cfg
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseHorizontalScroll -bool NO
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
-defaults write com.apple.dashboard mcx-disabled -boolean YES 
+defaults write com.apple.dashboard mcx-disabled -boolean YES
