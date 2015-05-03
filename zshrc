@@ -52,9 +52,7 @@ export ANDROID_SDK_HOME="/Users/ethan"
 
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim 
-# [ (-d "/Applications/Atom.app" || -d "$HOME/bin/Atom.app") ] && alias a=atom 
-[ -d "/Users/ethan/bin/Atom.app" ] && alias a=atom 
-# alias a='/usr/local/bin/atom'
+[ -d "$HOME/Applications/Atom.app" ] && alias a=atom 
 unsetopt correctall
 
 # RBENV
