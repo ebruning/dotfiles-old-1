@@ -61,5 +61,6 @@ cask 'subler'
 cask 'totalfinder'
 cask 'transmission'
 cask 'transmit'
+cask 'visual-studio-code'
 cask 'vmware-fusion'
 
