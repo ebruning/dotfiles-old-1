@@ -35,9 +35,7 @@ call plug#end()
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                                    " Turn on line numbers
-"set guifont=Bitstream\ Vera\ Sans\ Mono:h13   " Set font and size
-" set guifont=Inconsolata\ for\ Powerline:h13   " Set font and size
-set guifont=Inconsolata-g\ for\ powerline:h12
+set guifont=Inconsolata-dz\ for\ powerline:h12
 syntax enable
 set background=dark
 set laststatus=2
