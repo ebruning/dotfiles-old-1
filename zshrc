@@ -10,7 +10,9 @@ ZSH=$HOME/dotfiles/oh-my-zsh
 # ZSH_THEME="simple"
 # ZSH_THEME="kolo"
 # ZSH_THEME="avit"
-ZSH_THEME="gentoo"
+# ZSH_THEME="gentoo"
+ZSH_THEME="agnoster" #Nice prompt maybe a little busy
+# ZSH_THEME="avit"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -51,8 +53,8 @@ export EDITOR="mvim -f"
 export ANDROID_SDK_HOME="/Users/ethan"
 
 # Alias
-[ -f "/usr/local/bin/mvim" ] && alias e=mvim 
-[ -d "$HOME/Applications/Atom.app" ] && alias a=atom 
+[ -f "/usr/local/bin/mvim" ] && alias e=mvim
+[ -d "$HOME/Applications/Atom.app" ] && alias a=atom
 unsetopt correctall
 
 # RBENV
@@ -72,7 +74,7 @@ function xc {
 
 function distribute {
   ipa build
-  
+
   # TODO: check if build succeeds before uploading
   ipa distribute
 }
