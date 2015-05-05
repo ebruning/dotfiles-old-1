@@ -17,7 +17,7 @@ brew 'lame'
 brew 'libtool'
 brew 'libvo-aacenc'
 brew 'libxml2'
-brew 'macvim'
+brew 'macvim', args: ['--env-std',  '--override-system-vim']
 brew 'node'
 brew 'openssl'
 brew 'p7zip'
@@ -66,4 +66,3 @@ cask 'transmission'
 cask 'transmit'
 cask 'visual-studio-code'
 cask 'vmware-fusion'
-
