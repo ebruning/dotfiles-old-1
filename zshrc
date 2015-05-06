@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/dotfiles/oh-my-zsh
+HOMEBREW_HOME=/usr/local/bin
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,6 +56,8 @@ export ANDROID_SDK_HOME="/Users/ethan"
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
+[ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
+
 unsetopt correctall
 
 # RBENV
