@@ -59,10 +59,19 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Context: user@hostname (who am I and where am I)
+# Original method
+# prompt_context() {
+#   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER%m"
+#   fi
+# }
+
+# Remove the user name and hostname, don't normally ssh
+# and the prompt got long
 prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
-  fi
+  # if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+  #   prompt_segment black default "%(!.%{%F{yellow}%}.)%m"
+  # fi
 }
 
 # Git: branch/detached head, dirty status
@@ -140,6 +149,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   # prompt_segment blue black '%~'
+  # Only show the current plus one parent folder
   prompt_segment blue black '%2d'
 }
 
