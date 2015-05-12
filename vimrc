@@ -1,5 +1,5 @@
 "color kalisi
-color jellybeans 
+color codeschool 
 
 filetype off    " Needed for vundle turn it on later
 "set rtp+=~/.vim/bundle/Vundle.vim/
