@@ -24,6 +24,10 @@ export ANDROID_SDK="/Users/ethan/bin/sdk"
 export EDITOR="mvim -f"
 export ANDROID_SDK_HOME="/Users/ethan"
 
+# fastlane variables
+export DELIVER_USER="ebruning@gmail.com"
+export FASTLANE_TEAM_ID="GEF98ZHGFB"
+
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
