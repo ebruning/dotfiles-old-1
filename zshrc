@@ -26,7 +26,7 @@ export ANDROID_SDK_HOME=$ANDROID_SDK
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
 
 # Alias
-[ -f "/usr/local/bin/mvim" ] && alias e=mvim
+[ -f "$HOMEBREW_HOME/mvim" ] && alias e=mvim
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
 [ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
 
