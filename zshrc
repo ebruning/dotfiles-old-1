@@ -12,13 +12,18 @@ source $ZSH/oh-my-zsh.sh
 
 set -o vi
 
-export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/bin/android-ndk-r9:$HOME/.cask/bin:$HOME/bin/sdk/tools:$HOME/bin/sdk/platform-tools:$PATH"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export EDITOR="mvim -f"
 
 # fastlane variables
 export DELIVER_USER="ebruning@gmail.com"
 export FASTLANE_TEAM_ID="GEF98ZHGFB"
+
+# android variables
+export ANDROID_SDK="/Users/ethan/bin/adt-bundle-mac-x86_64-20140702/sdk"	
+export ANDROID_SDK_HOME=$ANDROID_SDK
+
+export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
 
 # Alias
 [ -f "/usr/local/bin/mvim" ] && alias e=mvim
