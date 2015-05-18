@@ -1,5 +1,6 @@
 tap 'caskroom/cask'
 
+brew 'ant'
 brew 'autoconf'
 brew 'automake'
 brew 'brew-cask'
