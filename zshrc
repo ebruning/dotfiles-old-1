@@ -29,6 +29,7 @@ export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_
 [ -f "$HOMEBREW_HOME/mvim" ] && alias e=mvim
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
 [ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
+[ -f "$HOMEBREW_HOME/emacs" ] && alias sp=emacs
 
 unsetopt correctall
 
