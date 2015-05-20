@@ -27,7 +27,6 @@ Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'tomswartz07/vim-todo'
 
 call plug#end()
 
