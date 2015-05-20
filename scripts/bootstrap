@@ -40,19 +40,11 @@ setup_directories () {
   mkdir -p $HOME/.uncrustify
 }
 
-## Clone oh-my-zsh
-# git clone git://github.com/robbyrussell/oh-my-zsh.git DOTFILES_ROOT/oh-my-zsh
-
-## Clone my atom config files
-# git clone https://github.com/ebruning/atom.git DOTFILES_ROOT/atom
 
 ## Synlink files
 link_files DOTFILES_ROOT/vimrc $HOME/.vimrc
 link_files DOTFILES_ROOT/gitconfig $HOME/.gitconfig
 link_files DOTFILES_ROOT/zshrc $HOME/.zshrc
-link_files DOTFILES_ROOT/atom $HOME/.atom
-link_files DOTFILES_ROOT/kolo.zsh-theme $HOME/oh-my-zsh/custom/kolo.zsh-theme
-link_files DOTFILES_ROOT/uncrustifyconfig $HOME/.uncrustify/uncrustify.cfg
 
 ## System settings
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseHorizontalScroll -bool NO
