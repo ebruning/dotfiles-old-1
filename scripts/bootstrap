@@ -60,3 +60,11 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseHorizontalSc
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 defaults write com.apple.dashboard mcx-disabled -boolean YES
+
+
+## Install brew and brew bundle
+cd $DOTFILES_ROOT
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap Homebrew/bundle
+brew bundle
+
