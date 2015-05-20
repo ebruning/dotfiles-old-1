@@ -37,7 +37,7 @@ link_files () {
 }
 
 setup_directories () {
-  mkdir -p $HOME/.uncrustify
+  mkdir -p $HOME/.vim/colors
 }
 
 ## Clone dotfiles
