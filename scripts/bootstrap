@@ -6,7 +6,8 @@
 # Used https://github.com/holman/dotfiles/blob/master/script/bootstrap as
 # the base
 
-DOTFILES_ROOT="`pwd`"
+# DOTFILES_ROOT="`pwd`"
+DOTFILES_ROOT="/Users/ethan/dotfiles"
 
 set -e
 
