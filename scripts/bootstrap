@@ -63,8 +63,11 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 
 ## Install brew and brew bundle
+## TODO: handle having to sudo before installing brew
 cd $DOTFILES_ROOT
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap Homebrew/bundle
 brew bundle
 
+## Install vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
