@@ -55,7 +55,7 @@ link_files $DOTFILES_ROOT/gitconfig $HOME/.gitconfig
 link_files $DOTFILES_ROOT/zshrc $HOME/.zshrc
 
 ## Custom zsh theme
-link_files $DOTFILES_ROOT/agnoster.zsh-theme $DOTFILES_ROOT/oh-my-zsh/custom/agnoster.zsh-theme
+# link_files $DOTFILES_ROOT/agnoster.zsh-theme $DOTFILES_ROOT/oh-my-zsh/custom/agnoster.zsh-theme
 
 ## System settings
 info "Writing system settings"
