@@ -7,7 +7,9 @@
 # the base
 
 # DOTFILES_ROOT="`pwd`"
-DOTFILES_ROOT="/Users/ethan/dotfiles"
+# DOTFILES_ROOT="/Users/ethan/dotfiles"
+DOTFILES_ROOT="/Users/ethan/tmp/dotfiles"
+HOME="/Users/ethan/tmp"
 
 set -e
 
@@ -40,10 +42,13 @@ setup_directories () {
   mkdir -p $HOME/.vim/colors
 }
 
-## Clone dotfiles
-git clone --recursive https://github.com/ebruning/dotfiles.git
+## Make directories
+info "Making directories"
+setup_directories
 
-exit
+## Clone dotfiles
+info "Cloning dot files"
+git clone --recursive https://github.com/ebruning/dotfiles.git
 
 ## Symlink files
 ## Personal files
@@ -56,22 +61,29 @@ link_files $DOTFILES_ROOT/agnoster.zsh-theme $DOTFILES_ROOT/oh-my-zsh/custom/agn
 
 
 ## System settings
+info "Writing system settings"
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseHorizontalScroll -bool NO
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 defaults write com.apple.dashboard mcx-disabled -boolean YES
 
-
 ## Install brew and brew bundle
 ## TODO: handle having to sudo before installing brew
 cd $DOTFILES_ROOT
+info "Installing homebrew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+info "Installing brew bundle"
 brew tap Homebrew/bundle
+
+info "Installing bundle applications"
 brew bundle
 
 ## Install vim plugin manager
+info "Installing vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ##Install ruby
+info "Installing Ruby 2.2.1"
 rbenv install 2.2.1
 rbenv global 2.2.1
