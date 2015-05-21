@@ -7,7 +7,7 @@
 # the base
 
 # DOTFILES_ROOT="`pwd`"
-DOTFILES_ROOT="/Users/ethan/dotfiles"
+DOTFILES_ROOT="$HOME/dotfiles"
 
 set -e
 
