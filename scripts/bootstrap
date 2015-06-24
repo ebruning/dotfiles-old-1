@@ -52,6 +52,7 @@ git clone --recursive https://github.com/ebruning/dotfiles.git
 ## Personal files
 link_files $DOTFILES_ROOT/vimrc $HOME/.vimrc
 link_files $DOTFILES_ROOT/gitconfig $HOME/.gitconfig
+link_files $DOTFILES_ROOT/gitignore_global $HOME/.gitignore_global
 link_files $DOTFILES_ROOT/zshrc $HOME/.zshrc
 
 ## Custom zsh theme
