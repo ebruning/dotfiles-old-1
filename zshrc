@@ -4,7 +4,7 @@ HOMEBREW_HOME=/usr/local/bin
 
 ZSH_THEME="agnoster" #Nice prompt maybe a little busy
 
-plugins=(osx brew)
+plugins=(osx brew vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,7 +56,7 @@ function distribute {
 }
 
 function dnsflush {
-  sudo discoveryutil mdnsflushcache
+  dscacheutil -flushcache
 }
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
