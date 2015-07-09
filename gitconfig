@@ -4,6 +4,7 @@
 [core]
 	editor = mvim -f
 	trustctime = false
+	excludesfile = ~/.gitignore_global
 
 [user]
 	name = Ethan Bruning
