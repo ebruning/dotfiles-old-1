@@ -4,7 +4,7 @@ HOMEBREW_HOME=/usr/local/bin
 
 ZSH_THEME="agnoster" #Nice prompt maybe a little busy
 
-plugins=(osx brew vagrant)
+plugins=(osx brew vagrant zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 

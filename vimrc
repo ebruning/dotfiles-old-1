@@ -34,7 +34,8 @@ call plug#end()
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                                    " Turn on line numbers
-set guifont=Inconsolata-dz\ for\ powerline:h12
+" set guifont=Inconsolata-dz\ for\ powerline:h12
+set guifont=Bitstream\ Vera\ Sans\ Mono:h13 
 syntax enable
 set background=dark
 set laststatus=2
@@ -50,7 +51,8 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Configurations                                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:let mapleader = "'"                     " Change the leader key to a tick 
+" :let mapleader = "'"                     " Change the leader key to a tick 
+:let mapleader = " "                   " Change the leader key to space
 map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
 set pastetoggle=<F4>
 
