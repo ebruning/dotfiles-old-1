@@ -40,7 +40,7 @@ brew 'zsh'
 
 cask '1password'
 cask 'android-studio'
-cask 'appzapper'
+cask 'appcleaner'
 cask 'atom'
 cask 'bartender'
 cask 'bettertouchtool'
