@@ -1,10 +1,4 @@
-"color kalisi
-color codeschool 
-
 filetype off    " Needed for vundle turn it on later
-"set rtp+=~/.vim/bundle/Vundle.vim/
-"call vundle#rc()
-"Plugin 'gmarik/Vundle.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Plugins                                        "
@@ -21,14 +15,21 @@ Plug 'tpope/vim-git'
 Plug 'sjl/gundo.vim'
 Plug 'helino/vim-json'
 Plug 'tomtom/tcomment_vim'
-Plug 'wincent/Command-T'
+" Plug 'wincent/Command-T'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'ktonga/vim-follow-my-lead'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
+
+" color kalisi
+" color codeschool 
+color hybrid
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
