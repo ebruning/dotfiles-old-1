@@ -18,18 +18,22 @@ export EDITOR="mvim -f"
 # fastlane variables
 export DELIVER_USER="ebruning@gmail.com"
 export FASTLANE_TEAM_ID="GEF98ZHGFB"
+export XCODE_INSTALL_PASSWORD=
+export XCODE_INSTALL_USER=ebruning@gmail.com
 
 # android variables
-export ANDROID_SDK="/Users/ethan/bin/adt-bundle-mac-x86_64-20140702/sdk"	
-export ANDROID_SDK_HOME=$ANDROID_SDK
+export ANDROID_SDK="/Users/ethan/Library/Android/sdk"	
+export ANDROID_SDK_HOME="$HOME/"
 
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Alias
-[ -f "$HOMEBREW_HOME/mvim" ] && alias e=mvim
+[ -f "$HOMEBREW_HOME/mvim" ] && alias v=mvim
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
 [ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
-[ -f "$HOMEBREW_HOME/emacs" ] && alias sp=emacs
+# [ -f "$HOMEBREW_HOME/emacs" ] && alias e=emacs
+[ -f "$HOMEBREW_HOME/emacs" ] && alias e="open /Applications/Emacs.app"
 
 unsetopt correctall
 
