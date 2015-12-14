@@ -28,8 +28,8 @@ Plug 'w0ng/vim-hybrid'
 call plug#end()
 
 " color kalisi
-" color codeschool 
-color hybrid
+color codeschool 
+" color hybrid
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
