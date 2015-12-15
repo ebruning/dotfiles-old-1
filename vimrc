@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-Plug 'dantler/vim-alternate'
+" Plug 'dantler/vim-alternate'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -15,15 +15,13 @@ Plug 'tpope/vim-git'
 Plug 'sjl/gundo.vim'
 Plug 'helino/vim-json'
 Plug 'tomtom/tcomment_vim'
-" Plug 'wincent/Command-T'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'ktonga/vim-follow-my-lead'
-Plug 'w0ng/vim-hybrid'
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
