@@ -62,7 +62,7 @@ function distribute {
 }
 
 function dnsflush {
-  dscacheutil -flushcache
+  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 }
 
 function jsonpp () { cat "$@" | python -mjson.tool | pygmentize -l json  }
