@@ -31,7 +31,7 @@ export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$HOME/.cask/bin:$ANDROID_
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Alias
-[ -f "$HOMEBREW_HOME/mvim" ] && alias v=mvim
+[ -f "$HOMEBREW_HOME/mvim" ] && alias v="vimer -t"
 [ -d "$HOME/Applications/Atom.app" ] && alias a=atom
 [ -f "$HOMEBREW_HOME/hub" ] && alias git=hub
 # [ -f "$HOMEBREW_HOME/emacs" ] && alias e=emacs
