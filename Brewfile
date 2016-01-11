@@ -21,6 +21,7 @@ brew 'libtool'
 brew 'libvo-aacenc'
 brew 'libxml2'
 brew 'macvim', args: ['--env-std',  '--override-system-vim']
+brew 'mono'
 brew 'node'
 brew 'openssl'
 brew 'p7zip'
