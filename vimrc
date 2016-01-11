@@ -22,6 +22,8 @@ Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby'
+Plug 'OmniSharp/omnisharp-vim' "Extra install steps https://github.com/OmniSharp/omnisharp-vim
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
