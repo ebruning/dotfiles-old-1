@@ -20,6 +20,7 @@ brew 'lame'
 brew 'libtool'
 brew 'libvo-aacenc'
 brew 'libxml2'
+brew 'mackup'
 brew 'macvim', args: ['--env-std',  '--override-system-vim']
 brew 'mono'
 brew 'node'
