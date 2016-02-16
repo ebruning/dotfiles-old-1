@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 " Plug 'dantler/vim-alternate'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
@@ -20,23 +21,25 @@ Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby'
-Plug 'OmniSharp/omnisharp-vim' "Extra install steps https://github.com/OmniSharp/omnisharp-vim
+" Plug 'OmniSharp/omnisharp-vim' "Extra install steps https://github.com/OmniSharp/omnisharp-vim
 Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
 " color kalisi
-color codeschool 
+" color codeschool 
 " color hybrid
+colorscheme alduin
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                                    " Turn on line numbers
 " set guifont=Inconsolata-dz\ for\ powerline:h12
-set guifont=Bitstream\ Vera\ Sans\ Mono:h13 
+" set guifont=Bitstream\ Vera\ Sans\ Mono:h13 
+set guifont=Hack:h14 
 syntax enable
 set background=dark
 set laststatus=2
