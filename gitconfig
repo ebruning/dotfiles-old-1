@@ -4,17 +4,20 @@
 [core]
 	editor = mvim -f
 	trustctime = false
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/ethan/.gitignore_global
+	pager = diff-so-fancy | less --tabs=1,5 -R
 
 [user]
 	name = Ethan Bruning
-	email = ebruning@gmail.com
+	# email = ebruning@gmail.com
 
 [push]
 	default = simple
 
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  devshots = config user.email "ethan@devshots.io"
+  me = config user.email "ebruning@gmail.com"
 
 [credential]
 	helper = osxkeychain
@@ -30,3 +33,14 @@
       tool = mvimdiff
 [difftool "mvimdiff"]
       cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
