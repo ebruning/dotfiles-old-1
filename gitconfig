@@ -9,7 +9,7 @@
 
 [user]
 	name = Ethan Bruning
-	# email = ebruning@gmail.com
+	email = ebruning@gmail.com
 
 [push]
 	default = simple
