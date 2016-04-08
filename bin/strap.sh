@@ -52,7 +52,7 @@ STDIN_FILE_DESCRIPTOR="0"
 STRAP_GIT_NAME='Ethan Bruning'
 STRAP_GIT_EMAIL='ebruning@gmail.com'
 STRAP_GITHUB_USER='ebruning'
-STRAP_GITHUB_TOKEN='334813f34aad04e6abc00283d1a5bcb3a140b13d'
+STRAP_GITHUB_TOKEN=''
 STRAP_ISSUES_URL='https://github.com/mikemcquaid/strap/issues/new'
 
 STRAP_FULL_PATH="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
