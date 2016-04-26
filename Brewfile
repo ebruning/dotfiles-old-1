@@ -1,5 +1,3 @@
-tap 'caskroom/cask'
-
 brew 'python' 
 brew 'ant'
 brew 'autoconf'
