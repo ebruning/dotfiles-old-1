@@ -4,7 +4,6 @@
 [core]
 	editor = mvim -f
 	trustctime = false
-	excludesfile = /Users/ethan/.gitignore_global
 	pager = diff-so-fancy | less --tabs=1,5 -R
 
 [user]
