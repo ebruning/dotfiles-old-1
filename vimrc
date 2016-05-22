@@ -21,7 +21,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
 Plug 'Keithbsmiley/swift.vim'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'OmniSharp/omnisharp-vim' "Extra install steps https://github.com/OmniSharp/omnisharp-vim
 Plug 'tpope/vim-dispatch'
@@ -37,8 +36,6 @@ colorscheme alduin
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                                    " Turn on line numbers
-" set guifont=Inconsolata-dz\ for\ powerline:h12
-" set guifont=Bitstream\ Vera\ Sans\ Mono:h13 
 set guifont=Hack:h14 
 syntax enable
 set background=dark
