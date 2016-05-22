@@ -203,3 +203,6 @@ fabric.properties
 MobileSDK.framework
 SDKStrings.bundle
 uiimages.bundle
+
+# Tags
+.tags
