@@ -1,5 +1,3 @@
-filetype off    " Needed for vundle turn it on later
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Plugins                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -7,55 +5,67 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-" Plug 'dantler/vim-alternate'
-Plug 'itchyny/lightline.vim'
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'sjl/gundo.vim'
-Plug 'helino/vim-json'
 Plug 'tomtom/tcomment_vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-misc'
-Plug 'Keithbsmiley/swift.vim'
-Plug 'vim-ruby/vim-ruby'
-" Plug 'OmniSharp/omnisharp-vim' "Extra install steps https://github.com/OmniSharp/omnisharp-vim
 Plug 'tpope/vim-dispatch'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-markdown'
+Plug 'suan/vim-instant-markdown'
+Plug 'majutsushi/tagbar'
+Plug 'craigemery/vim-autotag'
+Plug 'xolox/vim-easytags'
+
+" Unite
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/unite.vim'
+Plug 'rstacruz/vim-fastunite'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/unite-outline'
+Plug 'tsukkee/unite-tag'
+
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+
 
 call plug#end()
 
-" color kalisi
-" color codeschool 
-" color hybrid
-colorscheme alduin
+color sorcerer
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                                    " Turn on line numbers
+set number
 set guifont=Hack:h14 
 syntax enable
 set background=dark
 set laststatus=2
-set textwidth=80                              " Forces screen size
+" set textwidth=80                              " Forces screen size
 highlight SignColumn guibg=black              " Set the gutter/sign to black
 
 set nocompatible                " Do not act like vi
 set encoding=utf-8
-"set showcmd
-set noshowmode                  " Don't show the mode
+" set noshowmode                  " Don't show the mode
+set nobackup
+set noswapfile
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Configurations                                                      "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" :let mapleader = "'"                     " Change the leader key to a tick 
 :let mapleader = " "                   " Change the leader key to space
 map <Leader>j :%!python -m json.tool<CR> " Set 'j to format a json file
 set pastetoggle=<F4>
+:nmap <F1> :Explore<CR>
+:imap <F1> <Esc>:Explore<CR>
+:nnoremap <CR> :nohlsearch<cr>
 
 " The alt (option) key on macs now behaves like the 'meta' key. This means we
 " can now use <m-x> or similar as maps. This is buffer local, and it can easily
@@ -65,7 +75,6 @@ if has("gui_macvim")
   set macmeta
 endif
 
-:nnoremap <CR> :nohlsearch<cr>
 
 " Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -81,7 +90,7 @@ set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set autoindent                  " on new lines, match indent of previous line
 set copyindent                  " copy the previous indentation on autoindenting
 set cindent                     " smart indenting for c-like code
-set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
+"set cino=b1,g0,N-s,t0,(0,W4     " see :h cinoptions-values
 set guioptions-=r
 set guioptions-=L
 
@@ -134,9 +143,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-"" Clang completion
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-
 "" none of these should be word dividers, so make them not be
 set iskeyword+=_,$,@,%,#
 
@@ -178,88 +184,31 @@ highlight SpecialKey guifg=#4a4a59
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Alternate                                                               "
+" Airline                                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Set toggling between source and header files for Obj-C
-"" :A :AS and :AT in new tab
-autocmd FileType objc let g:alternateExtensions_h = "m" 
-autocmd FileType objc let g:alternateExtensions_m = "h"
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16'
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" easytag
+" let g:easytags_file = './.tags'
+
+" Unite
+map <C-p> [unite]p
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T                                                               "
+" Gitgutter                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:CommandTMaxHeight          = 20
-set wildignore+=*.o,*.obj,.git,*.pyc,*.so,blaze*,READONLY,llvm,Library*,CMakeFiles,*.class
+let g:gitgutter_highlight_lines = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gundo                                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_width=80
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Lightline                                                               "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
-
-function! MyModified()
-   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! MyReadonly()
-   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-        \  &ft == 'unite' ? unite#get_status_string() : 
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling                                                                "
@@ -285,102 +234,31 @@ highlight SyntasticErrorSign guifg=red
 highlight SyntasticWarningSign guifg=yellow
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open=1
-
-let g:syntastic_java_javac_classpath = '/Users/ethan/bin/sdk/platforms/android-19/*.jar:/Users/ethan/Dropbox/Mobile/Libs/2.0.2/Android/*.jar:../bin/classes'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar                                                                  "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <F1> :TagbarToggle<CR> 
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
-
-let g:tagbar_type_puppet = {
-    \ 'ctagstype': 'puppet',
-    \ 'kinds': [
-        \'c:class',
-        \'s:site',
-        \'n:node',
-        \'d:definition'
-      \]
-    \}
-
-let g:tagbar_type_markdown = {
-	\ 'ctagstype' : 'markdown',
-	\ 'kinds' : [
-		\ 'h:Heading_L1',
-		\ 'i:Heading_L2',
-		\ 'k:Heading_L3'
-	\ ]
-\ }
-
-let g:tagbar_type_objc = {
-    \ 'ctagstype' : 'ObjectiveC',
-    \ 'kinds'     : [
-        \ 'i:interface',
-        \ 'I:implementation',
-        \ 'p:Protocol',
-        \ 'm:Object_method',
-        \ 'c:Class_method',
-        \ 'v:Global_variable',
-        \ 'F:Object field',
-        \ 'f:function',
-        \ 'p:property',
-        \ 't:type_alias',
-        \ 's:type_structure',
-        \ 'e:enumeration',
-        \ 'M:preprocessor_macro',
-    \ ],
-    \ 'sro'        : ' ',
-    \ 'kind2scope' : {
-        \ 'i' : 'interface',
-        \ 'I' : 'implementation',
-        \ 'p' : 'Protocol',
-        \ 's' : 'type_structure',
-        \ 'e' : 'enumeration'
-    \ },
-    \ 'scope2kind' : {
-        \ 'interface'      : 'i',
-        \ 'implementation' : 'I',
-        \ 'Protocol'       : 'p',
-        \ 'type_structure' : 's',
-        \ 'enumeration'    : 'e'
-    \ }
-\ }
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tcomment                                                                "
+" vim-markdown                                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <D-/> gcc
-" inoremap <D-/> call <Leader>__
-" vnoremap <D-/> gc
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree                                                                "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F1> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" we can't use <tab> as our snippet key since we use that with YouCompleteMe
-let g:UltiSnipsSnippetsDir         = $HOME . '~/.vim/UltiSnips'
-let g:UltiSnipsExpandTrigger       = "<m-s>"
-let g:UltiSnipsListSnippets        = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
-let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
-let g:snips_author                 = 'Ethan Bruning'
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<return>"
+let g:UltiSnipsJumpForwardTrigger="<right>"
+let g:UltiSnipsJumpBackwardTrigger="<left>"
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe                                                           "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_conf.py'
-let g:ycm_collect_identifiers_from_tags_files = 1
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " XML formatter
 function! DoFormatXML() range
@@ -442,4 +320,3 @@ vmap <silent> <leader>x :FormatXML<CR>
 set tags+=/Users/ethan/.vim/tags
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 let g:SuperTabDefaultCompletionType = 'context'
-
