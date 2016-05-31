@@ -4,8 +4,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
@@ -17,11 +15,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'xolox/vim-misc'
 Plug 'tpope/vim-dispatch'
 Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-markdown'
-Plug 'suan/vim-instant-markdown'
 Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
 Plug 'xolox/vim-easytags'
+
+" Markdown
+Plug 'tpope/vim-markdown'
+" Plug 'suan/vim-instant-markdown'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 " Unite
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -31,7 +32,12 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-outline'
 Plug 'tsukkee/unite-tag'
 
+" Completion
 Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+
 Plug 'scrooloose/nerdtree'
 
 
@@ -74,7 +80,6 @@ set pastetoggle=<F4>
 if has("gui_macvim")
   set macmeta
 endif
-
 
 " Silver searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -130,12 +135,6 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ctags                                                                   "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"au BufWritePost *.c,*.cpp,*.h,*.m silent! !ctags -R &
-set tags=~/vim/tags,./tags,tags,.tags
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Settings                                                          "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""Ruby"
@@ -182,22 +181,19 @@ highlight SpecialKey guifg=#4a4a59
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations                                                   "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"easy-tags
+let g:easytags_file = '~/.vimtags'
+
+" markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_hotkey='<C-m>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline                                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16'
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" easytag
-" let g:easytags_file = './.tags'
-
-" Unite
-map <C-p> [unite]p
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gitgutter                                                               "
@@ -238,6 +234,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar                                                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F2> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-markdown                                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -247,18 +248,26 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 " NERDTree                                                                "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F1> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips                                                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsExpandTrigger="<return>"
+let g:UltiSnipsExpandTrigger="<c-a>"
 let g:UltiSnipsJumpForwardTrigger="<right>"
 let g:UltiSnipsJumpBackwardTrigger="<left>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Unite                                                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-p> [unite]p
 
 " XML formatter
 function! DoFormatXML() range
@@ -315,8 +324,3 @@ command! -range=% FormatXML <line1>,<line2>call DoFormatXML()
 
 nmap <silent> <leader>x :%FormatXML<CR>
 vmap <silent> <leader>x :FormatXML<CR>
-
-"Added by android-vim:
-set tags+=/Users/ethan/.vim/tags
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let g:SuperTabDefaultCompletionType = 'context'
